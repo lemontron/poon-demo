@@ -1,6 +1,6 @@
 import React from 'react';
-import { navigation } from '../../../../router';
-import { List, Window } from '../../../../ui';
+import { navigation } from '@poon/router';
+import { List, Window } from '@poon/ui';
 import FileItem from './FileItem.jsx';
 
 const FilesSearch = ({screen, isVisible}) => {

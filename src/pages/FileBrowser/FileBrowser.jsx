@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Button, Card, Dropdown, DropdownItem, HeaderButton, List, Placeholder } from '../../../../ui';
+import { Button, Card, Dropdown, DropdownItem, HeaderButton, List, Placeholder } from '@poon/ui';
 import { randomId } from '@poon/router/util.js';
 import FileItem from './FileItem.jsx';
 
@@ -54,7 +54,7 @@ const demoFiles = [{
 	icon: 'description',
 }];
 
-const FileBrowser = ({screen, isVisible}) => {
+const FileBrowser = ({screen, isVisible, animateIn}) => {
 	const path = '/' + screen.useParam('path', '');
 
 	// const folder = demoFiles.find(r => r.type === 'folder' && r.path === path);
@@ -99,6 +99,7 @@ const FileBrowser = ({screen, isVisible}) => {
 		<Card
 			title={path === '/' ? 'Files' : path.split('/').pop()}
 			isVisible={isVisible}
+			animateIn={animateIn}
 			headerRight={<HeaderButton icon="search" href="/files/search"/>}
 			children={renderBody()}
 		/>

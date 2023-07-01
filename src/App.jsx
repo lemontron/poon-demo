@@ -1,8 +1,8 @@
 import './styles.css';
 import '@poon/ui/src/poon.css';
 import React, { Fragment } from 'react';
-import { PoonOverlays } from '../../ui';
-import { Stack, defineRoute } from '../../router';
+import { PoonOverlays } from '@poon/ui';
+import { Stack, defineRoute } from '@poon/router';
 import HomePage from './pages/HomePage.jsx';
 import FileBrowser from './pages/FileBrowser/FileBrowser.jsx';
 import AlertDemo from './pages/AlertDemo.jsx';
