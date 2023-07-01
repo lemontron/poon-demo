@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import { Button, Card, Dropdown, DropdownItem, HeaderButton, List, Placeholder } from '../../../../ui';
-import { randomId } from 'focus-router/util';
+import { randomId } from '@poon/router/util.js';
 import FileItem from './FileItem.jsx';
 
 const demoFiles = [{
