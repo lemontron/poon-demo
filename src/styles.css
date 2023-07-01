@@ -1,0 +1,40 @@
+:root {
+    --header-height:50px;
+    --root:#100;
+    --bg:#222;
+    --dark:#100;
+    --header-bg:#222;
+    --font:"Inconsolata", -apple-system, BlinkMacSystemFont, sans-serif;
+    --button-bg:#123;
+    --button-color:#fff;
+}
+
+.pitch {flex:1; height:100%; display:flex; flex-direction:column;}
+.pitch img {height:24px;}
+.pitch .scroller {padding:0 20px;}
+.pitch-page {display:flex; height:100%; justify-content:center; align-items:center; flex-direction:column; padding:20px;}
+.pitch-page .btn {position:absolute; bottom:10px; right:10px;}
+.pitch p {margin:0 auto 20px auto; max-width:350px; line-height:24px; text-align:center; font-size:17px; font-family:Caprasimo, sans-serif; color:#faa;}
+.springboard {display:flex; padding:10px; gap:10px; font-size:12px; width:100%;}
+
+.underline {position:relative; color:#fff;}
+.underline::before {
+    content:"";
+    position:absolute;
+    left:-2px;
+    bottom:-2px;
+    width:102%;
+    height:22px;
+    transform:skew(-20deg);
+    background:rgba(238, 111, 87, 0.5);
+    z-index:-1;
+}
+
+.alert-demo {display:flex; flex-direction:column; gap:10px; padding:10px; height:100%; justify-content:center; align-items:center;}
+
+@keyframes dash {
+    from {stroke-dashoffset:-200; opacity:0;}
+    to {stroke-dashoffset:0; opacity:1;}
+}
+
+.logo {stroke-dasharray:2000; stroke-dashoffset:0; animation:dash 2s linear; margin:40px auto;}
