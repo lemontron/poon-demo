@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, showAlert, toast, Window } from '../../../ui';
+import { Button, showAlert, toast, Window } from '@poon/ui';
 
 const AlertDemo = ({isVisible}) => {
 	const handleResult = (id) => {
@@ -33,6 +33,14 @@ const AlertDemo = ({isVisible}) => {
 
 	const pressEmptyAlert = () => showAlert('Demo Alert', 'There will be no button if you pass an empty options array.', []);
 
+	const pressMultipleAlerts = () => {
+		showAlert('Alert #1', 'So many alerts!');
+		showAlert('Alert #2', 'So many alerts!');
+		showAlert('Alert #3', 'So many alerts!');
+		showAlert('Alert #4', 'So many alerts!');
+		showAlert('Alert #5', 'So many alerts!');
+	};
+
 	return (
 		<Window
 			title="Alert Demo"
@@ -44,6 +52,7 @@ const AlertDemo = ({isVisible}) => {
 					<Button title="Show alert with red button" onClick={pressRedAlert}/>
 					<Button title="Show alert with no options passed" onClick={pressDefaultAlert}/>
 					<Button title="Show alert with empty options" onClick={pressEmptyAlert}/>
+					<Button title="Show 5 alerts at once!!!" onClick={pressMultipleAlerts}/>
 				</div>
 			}
 		/>

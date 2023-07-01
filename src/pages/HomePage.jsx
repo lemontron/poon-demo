@@ -11,8 +11,8 @@ const HomePage = ({}) => {
 				<div className="pitch-page">
 					<Logo/>
 					<p>
-						Married to the <span className="underline">web</span> but want to get down and dirty with
-						a <span className="underline">native app</span>? 😈
+						Married to the web but want to get down and dirty with
+						a native app? 😈
 					</p>
 					<Button
 						icon="arrow_downward"
@@ -37,10 +37,9 @@ const HomePage = ({}) => {
 					/>
 				</div>
 				<div className="pitch-page">
-					{/*<p>Ready to dive into the wildest adventure of your life?</p>*/}
 					<p>Put my project in your dependencies and let's make some magic! 🌶️🔥</p>
 					<div className="springboard">
-						<DashboardIcon title="Launch Demo" href="/demos" icon="tips_and_updates"/>
+						<DashboardIcon title="Power On!" href="/demos" icon="power_settings_new"/>
 					</div>
 				</div>
 			</ViewPager>
