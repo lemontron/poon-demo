@@ -38,7 +38,7 @@ const HomePage = ({}) => {
 				</div>
 				<div className="pitch-page">
 					<p>Put my project in your dependencies and let's make some magic! 🌶️🔥</p>
-					<div className="springboard">
+					<div>
 						<DashboardIcon title="Power On!" href="/demos" icon="power_settings_new"/>
 					</div>
 				</div>

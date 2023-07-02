@@ -2,7 +2,12 @@ import React from 'react';
 import { Card, DashboardIcon } from '@poon/ui';
 
 const Demos = ({isVisible, animateIn}) => (
-	<Card title="Crazy Demos" isVisible={isVisible} animateIn={animateIn}>
+	<Card
+		HeaderComponent={<div/>}
+		title="Crazy Demos"
+		isVisible={isVisible}
+		animateIn={animateIn}
+	>
 		<div className="springboard">
 			<DashboardIcon title="File Browser" icon="folder" href="/files"/>
 			<DashboardIcon title="Alerts" icon="notifications" href="/alert"/>
