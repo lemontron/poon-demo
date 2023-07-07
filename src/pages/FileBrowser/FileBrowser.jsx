@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Button, Card, Dropdown, DropdownItem, HeaderButton, List, Placeholder } from '@poon/ui';
+import { Button, Card, Dropdown, DropdownItem, HeaderButton, List, Placeholder, Reveal } from '@poon/ui';
 import { randomId } from '@poon/router/util.js';
 import FileItem from './FileItem.jsx';
 
@@ -95,9 +95,20 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 		);
 	};
 
+	if (path === '/') return (
+		<Reveal
+			title="Files"
+			isVisible={isVisible}
+			animateIn={animateIn}
+			headerRight={<HeaderButton icon="search" href="/files/search"/>}
+			children={renderBody()}
+		/>
+
+	);
+
 	return (
 		<Card
-			title={path === '/' ? 'Files' : path.split('/').pop()}
+			title={'/' + path.split('/').pop()}
 			isVisible={isVisible}
 			animateIn={animateIn}
 			headerRight={<HeaderButton icon="search" href="/files/search"/>}

@@ -12,5 +12,7 @@ module.exports = {
 	rules: {
 		'react-refresh/only-export-components': 'warn',
 		'react/no-unescaped-entities': 'off',
+		'react/display-name': 'off',
+		'react/no-children-prop': 'off',
 	},
 };

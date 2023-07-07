@@ -12,16 +12,22 @@ import Demos from './pages/Demos.jsx';
 import FilesSearch from './pages/FileBrowser/FilesSearch.jsx';
 import ShadeDemos from './pages/ShadeDemos.jsx';
 import ShadeDemoRainbow from './pages/ShadeDemoRainbow.jsx';
+import MapDemo from './pages/MapDemo/MapDemo.jsx';
+import FilterCategories from './pages/MapDemo/FilterCategories.jsx';
+import FilterTags from './pages/MapDemo/FilterTags.jsx';
 
 defineRoute('Home', '/', HomePage);
+defineRoute('Demos', '/demos', Demos);
 defineRoute('FilesSearch', '/files/search', FilesSearch);
 defineRoute('FileBrowser', '/files/:path?', FileBrowser);
 defineRoute('AlertDemo', '/alert', AlertDemo, 'modal');
-defineRoute('Demos', '/demos', Demos);
 defineRoute('ShadeDemoFluid', '/shades/fluid', ShadeDemoFluid);
 defineRoute('ShadeDemoFluid', '/shades/rainbow', ShadeDemoRainbow);
 defineRoute('ShadeDemos', '/shades', ShadeDemos);
 defineRoute('TabDemo', '/tab', TabDemo, 'modal');
+defineRoute('MapDemo', '/map', MapDemo);
+defineRoute('MapDemoFilterCategories', '/map/categories', FilterCategories);
+defineRoute('MapDemoFilterTags', '/map/tags', FilterTags);
 
 const App = () => (
 	<Fragment>

@@ -13,15 +13,20 @@
 .pitch img {height:24px;}
 .pitch .scroller {padding:0 20px;}
 .pitch-page {display:flex; height:100%; justify-content:center; align-items:center; flex-direction:column; padding:20px;}
-.pitch-page .btn {position:absolute; bottom:10px; right:10px;}
+.pitch-page .btn {position:absolute; bottom:20px; right:20px;}
 .pitch p {margin:0 auto 20px auto; line-height:24px; text-align:center; font-size:17px; font-family:Caprasimo, sans-serif; color:#faa;}
 
 @media (min-width:640px) {
     .pitch .scroller {padding:50px;}
+
     .pitch p {font-size:24px;}
 }
 
-.springboard {display:flex; padding:10px; gap:10px; font-size:12px; width:100%; flex:1; justify-content:center; align-items:center;}
+.demos {background:#000 url(/assets/pulsar.svg) center center !important; background-size:cover;}
+.demos .card-body {padding-bottom:100px;}
+.springboard, .dock {display:flex; padding:10px; gap:10px; font-size:12px; width:100%;}
+.springboard {flex:1; padding-top:20px;}
+.dock {position:absolute; bottom:0; left:0; right:0; height:100px; background:rgba(150,150,150,.1); backdrop-filter:blur(5px);}
 
 .alert-demo {display:flex; flex-direction:column; gap:10px; padding:10px; height:100%; justify-content:center; align-items:center;}
 
@@ -31,3 +36,12 @@
 }
 
 .logo {stroke-dasharray:2000; stroke-dashoffset:0; animation:dash 2s linear; margin:40px auto;}
+
+/* MAP DEMO */
+.map {height:100%;}
+.map-search {padding:0 10px 10px 10px;}
+.pills {padding:10px; position:absolute; top:0; left:0; right:0; display:flex; align-items:center; gap:10px;}
+.avatar {height:24px; width:24px; border-radius:12px;}
+.map-container {position:relative; flex:1;}
+.user-location-marker {height:20px; width:20px; border-radius:10px; background-color:#fff;}
+.user-location-marker:after {content:""; display:block; border-radius:8px; margin:2px; height:16px; width:16px; background-color:#48f;}

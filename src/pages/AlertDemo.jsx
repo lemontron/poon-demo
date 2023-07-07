@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, showAlert, toast, Window } from '@poon/ui';
+import { Button, Reveal, showAlert, toast } from '@poon/ui';
 
 const AlertDemo = ({isVisible}) => {
 	const handleResult = (id) => {
@@ -42,7 +42,7 @@ const AlertDemo = ({isVisible}) => {
 	};
 
 	return (
-		<Window
+		<Reveal
 			title="Alert Demo"
 			isVisible={isVisible}
 			children={
