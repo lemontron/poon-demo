@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, DashboardIcon } from '@poon/ui';
+import { Card, DashboardIcon, ViewPager } from '@poon/ui';
 
 const Demos = ({isVisible, animateIn}) => (
 	<Card
@@ -10,12 +10,25 @@ const Demos = ({isVisible, animateIn}) => (
 		HeaderComponent={null}
 		hasScrollView={false}
 		ShadeComponent={null}
+		disableGestures
 	>
-		<div className="springboard">
-			<DashboardIcon title="Alerts" icon="notifications" href="/alert"/>
-			<DashboardIcon title="Shades" icon="curtains_closed" href="/shades"/>
-			<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
-		</div>
+		<ViewPager>
+			<div className="springboard">
+				<DashboardIcon title="Alerts" icon="notifications" href="/alert"/>
+				<DashboardIcon title="Shades" icon="curtains_closed" href="/shades"/>
+				<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
+			</div>
+			<div className="springboard">
+				<DashboardIcon title="Alerts" icon="notifications" href="/alert"/>
+				<DashboardIcon title="Shades" icon="curtains_closed" href="/shades"/>
+				<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
+			</div>
+			<div className="springboard">
+				<DashboardIcon title="Alerts" icon="notifications" href="/alert"/>
+				<DashboardIcon title="Shades" icon="curtains_closed" href="/shades"/>
+				<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
+			</div>
+		</ViewPager>
 		<div className="dock">
 			<DashboardIcon title="Files" icon="folder" href="/files"/>
 			<DashboardIcon title="Map" icon="map" href="/map"/>
