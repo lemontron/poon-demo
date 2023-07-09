@@ -151,7 +151,7 @@ const MapBox = forwardRef(({
 		el.current.addEventListener('touchend', cancel);
 	}, []);
 
-	return <div className="map" ref={el}/>;
+	return <div className="mapbox" ref={el}/>;
 });
 
 export default MapBox;

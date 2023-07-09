@@ -38,6 +38,7 @@ const MapDemo = ({isVisible, animateIn}) => {
 			title="Map Demo"
 			isVisible={isVisible}
 			animateIn={animateIn}
+			className="map"
 		>
 			<div className="map-search">
 				<SearchInput

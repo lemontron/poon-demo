@@ -1,5 +1,16 @@
 import React, { Fragment } from 'react';
-import { Button, Card, Dropdown, DropdownItem, HeaderButton, List, Placeholder, Reveal } from '@poon/ui';
+import {
+	BreadCrumbs,
+	Button,
+	Card,
+	Dropdown,
+	DropdownItem,
+	Fab,
+	HeaderButton,
+	List,
+	Placeholder,
+	Reveal,
+} from '@poon/ui';
 import { randomId } from '@poon/router/util.js';
 import FileItem from './FileItem.jsx';
 
@@ -66,7 +77,7 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 		return (
 			<div className="fab-container">
 				<Dropdown
-					button={<Button icon="add" title="Add"/>}
+					button={<Fab icon="add" title="Add"/>}
 					position="bottom-right"
 					content={
 						<DropdownItem icon="create_new_folder" title="Create Folder"/>
@@ -83,6 +94,7 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 
 		return (
 			<Fragment>
+				<BreadCrumbs path={path}/>
 				<List
 					ListEmptyComponent={<Placeholder message="Empty Folder"/>}
 					items={files}
@@ -102,6 +114,7 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 			animateIn={animateIn}
 			headerRight={<HeaderButton icon="search" href="/files/search"/>}
 			children={renderBody()}
+			className="files"
 		/>
 
 	);
@@ -113,6 +126,7 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 			animateIn={animateIn}
 			headerRight={<HeaderButton icon="search" href="/files/search"/>}
 			children={renderBody()}
+			className="files"
 		/>
 	);
 };

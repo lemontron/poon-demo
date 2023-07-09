@@ -12,7 +12,7 @@ const Demos = ({isVisible, animateIn}) => (
 		ShadeComponent={null}
 		disableGestures
 	>
-		<ViewPager>
+		<ViewPager dots>
 			<div className="springboard">
 				<DashboardIcon title="Alerts" icon="notifications" href="/alert"/>
 				<DashboardIcon title="Shades" icon="curtains_closed" href="/shades"/>
