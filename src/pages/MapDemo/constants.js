@@ -5,33 +5,33 @@ export const defaultLocation = {type: 'Point', coordinates: [-73.987333, 40.7158
 export const categories = [{
 	'_id': 'park',
 	'name': 'Parks and Outdoors',
-	'icon': 'parks_and_outdoors.png',
+	'emoji': '🌳',
 }, {
 	'_id': 'bar',
 	'name': 'Bars and Clubs',
-	'icon': 'bars_and_clubs.png',
+	'emoji': '🍸',
 }, {
 	'_id': 'lodging',
 	'name': 'Hotels and Lodging',
-	'icon': 'hotels_and_lodging.png',
+	'emoji': '🛌',
 }, {
 	'_id': 'food',
 	'name': 'Restaurants',
-	'icon': 'restaurants.png',
+	'emoji': '🍴',
 }, {
 	'_id': 'beauty',
 	'name': 'Beauty and Spas',
-	'icon': 'beauty_and_spas.png',
+	'emoji': '💅',
 }, {
 	'_id': 'clothing',
 	'name': 'Clothing Stores',
-	'icon': 'clothing_stores.png',
+	'emoji': '👕',
 }, {
 	'_id': 'gallery',
 	'name': 'Art and Entertainment',
-	'icon': 'art_and_theaters.png',
+	'emoji': '🎭',
 }, {
 	'_id': 'store',
 	'name': 'Retail Stores',
-	'icon': 'retail_stores.png',
+	'emoji': '🛍️',
 }];

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Window, TouchableRow, List, CheckBox } from 'poon-ui';
+import { CheckBox, Emoji, List, TouchableRow, Window } from 'poon-ui';
 import { categories } from './constants.js';
 import { useFilterState } from './components/map-util.jsx';
 
@@ -36,7 +36,7 @@ const FilterCategories = ({isVisible, animateIn}) => {
 				keyExtractor={r => r.name}
 				renderItem={item => (
 					<TouchableRow
-						leftIcon={<img src={`/categories/${item.icon}`}/>}
+						leftIcon={<Emoji emoji={item.emoji}/>}
 						title={item.name}
 						onClick={() => toggleKey(item.name)}
 						RightComponent={
