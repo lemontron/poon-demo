@@ -1,5 +1,5 @@
 import React from 'react';
-import { DashboardIcon, Reveal } from '@poon/ui';
+import { DashboardIcon, Reveal } from 'poon-ui';
 
 const ShadeDemos = ({isVisible, animateIn}) => (
 	<Reveal

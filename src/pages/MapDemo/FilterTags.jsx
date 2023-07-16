@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Window, TouchableRow, List, CheckBox, Tag } from '@poon/ui';
+import { Window, TouchableRow, List, CheckBox, Tag } from 'poon-ui';
 import { useFilterState } from './components/map-util.jsx';
 
 const filterTags = (tags, search) => {

@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { Button, DashboardIcon, ViewPager } from '@poon/ui';
+import { Button, DashboardIcon, ViewPager } from 'poon-ui';
 import Logo from '../components/Logo.jsx';
 
 const HomePage = ({}) => {

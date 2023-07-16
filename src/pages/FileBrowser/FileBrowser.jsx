@@ -10,8 +10,8 @@ import {
 	List,
 	Placeholder,
 	Reveal,
-} from '@poon/ui';
-import { randomId } from '@poon/router/util.js';
+} from 'poon-ui';
+import { randomId } from 'poon-router/util.js';
 import FileItem from './FileItem.jsx';
 
 const demoFiles = [{

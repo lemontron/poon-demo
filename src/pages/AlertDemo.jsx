@@ -1,5 +1,5 @@
 import React from 'react';
-import { List, Reveal, showAlert, toast, TouchableRow } from '@poon/ui';
+import { List, Reveal, showAlert, toast, TouchableRow } from 'poon-ui';
 
 const AlertDemo = ({isVisible}) => {
 	const handleResult = (id) => {

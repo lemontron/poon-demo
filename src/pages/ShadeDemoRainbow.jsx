@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Placeholder } from '@poon/ui';
+import { Card, Placeholder } from 'poon-ui';
 import RainbowShade from '../components/RainbowShade.jsx';
 
 const ShadeDemoRainbow = ({isVisible, animateIn}) => (

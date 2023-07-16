@@ -1,5 +1,5 @@
 {
-  "name": "@poon/demo",
+  "name": "poon-demo",
   "version": "0.0.1",
   "type": "module",
   "scripts": {
@@ -26,7 +26,7 @@
     "vite": "^4.3.9"
   },
   "workspaces": [
-    "../ui",
-    "../router"
+    "../poon-ui",
+    "../poon-router"
   ]
 }

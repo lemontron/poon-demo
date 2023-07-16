@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { Fab } from '@poon/ui';
+import { Fab } from 'poon-ui';
 
 const FloatingButtons = ({followUser, clickFollowUser, countPlaces, loading, showAsList, pan}) => {
 	const el = useRef();

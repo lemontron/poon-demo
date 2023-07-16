@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Reveal, ScrollView, PillButton, showModal, toast, SearchInput, useAnimatedValue } from '@poon/ui';
+import { Reveal, ScrollView, PillButton, showModal, toast, SearchInput, useAnimatedValue } from 'poon-ui';
 import { capitalize, pluralize } from '../../util/format.js';
 import { filterDates } from './filters.js';
 import { defaultLocation } from './constants.js';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Window, Placeholder, ViewPager, ScrollView, Reveal } from '@poon/ui';
+import { Window, Placeholder, ViewPager, ScrollView, Reveal } from 'poon-ui';
 import LongList from '../components/LongList.jsx';
 
 const TabDemo = ({isVisible, animateIn}) => (
