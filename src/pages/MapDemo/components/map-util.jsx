@@ -1,7 +1,4 @@
-import mapbox, { Marker } from 'mapbox-gl';
 import { useState } from 'react';
-
-mapbox.accessToken = 'pk.eyJ1IjoiaG90c3BvdG55YyIsImEiOiJja2FjbzlldzkxYmI2MnNyeXByeTMxeGVkIn0.hR5UA6Ejo8uW8ADPnoh1bA';
 
 export const boundsToPolygon = (bounds) => ({
 	'type': 'Polygon',
@@ -18,13 +15,13 @@ export const createPlaceMarker = (place, map) => {
 	const el = document.createElement('div');
 	el.className = 'place-marker';
 	el.style.backgroundImage = `url(/categories/${getEmoji(place.properties.category)})`;
-	return new Marker(el).setLngLat(place.geometry.coordinates).addTo(map);
+	return new mapboxgl.Marker(el).setLngLat(place.geometry.coordinates).addTo(map);
 };
 
 export const createUserLocationMarker = (location, map) => {
 	const el = document.createElement('div');
 	el.className = 'user-location-marker';
-	return new Marker(el).setLngLat(location.coordinates).addTo(map);
+	return new mapboxgl.Marker(el).setLngLat(location.coordinates).addTo(map);
 };
 
 export const initPlacesSource = (map, features) => {

@@ -2,7 +2,7 @@ import './styles.css';
 import 'poon-ui/src/poon.css';
 import React, { Fragment } from 'react';
 import { PoonOverlays } from 'poon-ui';
-import { Stack, defineRoute } from 'poon-router';
+import { defineRoute, Stack } from 'poon-router';
 import HomePage from './pages/HomePage.jsx';
 import FileBrowser from './pages/FileBrowser/FileBrowser.jsx';
 import AlertDemo from './pages/AlertDemo.jsx';
@@ -15,6 +15,7 @@ import ShadeDemoRainbow from './pages/ShadeDemoRainbow.jsx';
 import MapDemo from './pages/MapDemo/MapDemo.jsx';
 import FilterCategories from './pages/MapDemo/FilterCategories.jsx';
 import FilterTags from './pages/MapDemo/FilterTags.jsx';
+import ClockDemo from './pages/ClockDemo.jsx';
 
 defineRoute('Home', '/', HomePage);
 defineRoute('Demos', '/demos', Demos);
@@ -28,6 +29,7 @@ defineRoute('TabDemo', '/tab', TabDemo);
 defineRoute('MapDemo', '/map', MapDemo);
 defineRoute('MapDemoFilterCategories', '/map/categories', FilterCategories);
 defineRoute('MapDemoFilterTags', '/map/tags', FilterTags);
+defineRoute('ClockDemo', '/clock', ClockDemo);
 
 const App = () => (
 	<Fragment>

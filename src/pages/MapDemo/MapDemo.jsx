@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { Reveal, ScrollView, PillButton, showModal, toast, SearchInput, useAnimatedValue } from 'poon-ui';
+import { PillButton, Reveal, ScrollView, SearchInput, showModal, toast, useAnimatedValue } from 'poon-ui';
 import { capitalize, pluralize } from '../../util/format.js';
 import { filterDates } from './filters.js';
 import { defaultLocation } from './constants.js';
@@ -56,6 +56,7 @@ const MapDemo = ({isVisible, animateIn}) => {
 					followUser={followUser}
 					onPressPlace={setPlaceId}
 					placeId={placeId}
+					accessToken="pk.eyJ1IjoiaG90c3BvdG55YyIsImEiOiJja2FjbzlldzkxYmI2MnNyeXByeTMxeGVkIn0.hR5UA6Ejo8uW8ADPnoh1bA"
 				/>
 				<ScrollView className="pills" horizontal>
 					<PillButton

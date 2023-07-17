@@ -1,7 +1,6 @@
-import React, { useEffect, useRef, forwardRef, useImperativeHandle, useState } from 'react';
-import mapbox from 'mapbox-gl';
-import 'mapbox-gl/dist/mapbox-gl.css';
-import { defaultLocation, mapBoxStyle, DEFAULT_ZOOM_LEVEL } from '../constants.js';
+import React, { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { loadCss, loadScript } from 'poon-ui';
+import { DEFAULT_ZOOM_LEVEL, defaultLocation, mapBoxStyle } from '../constants.js';
 import { boundsToPolygon, createPlaceMarker, createUserLocationMarker, initPlacesSource } from './map-util';
 
 const MapBox = forwardRef(({
@@ -14,6 +13,7 @@ const MapBox = forwardRef(({
 	location,
 	followUser,
 	placeId,
+	accessToken,
 }, ref) => {
 	const [map, setMap] = useState(null);
 	const el = useRef(null);
@@ -125,20 +125,28 @@ const MapBox = forwardRef(({
 	useEffect(() => {
 		if (map) return; // initialize map only once
 
-		const instance = new mapbox.Map({
-			'container': el.current,
-			'style': `mapbox://styles/hotspotnyc/${mapBoxStyle}`,
-			'center': center.coordinates,
-			'zoom': zoom,
-			'minZoom': 1,
+		Promise.all([
+			loadScript('https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js', 'mapboxgl'),
+			loadCss('https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css'),
+		]).then(res => {
+			const [mapbox] = res;
+			mapbox.accessToken = accessToken;
+
+			const instance = new mapbox.Map({
+				'container': el.current,
+				'style': `mapbox://styles/hotspotnyc/${mapBoxStyle}`,
+				'center': center.coordinates,
+				'zoom': zoom,
+				'minZoom': 1,
+			});
+
+			instance.on('load', async () => {
+				setMap(instance);
+				await initPlacesSource(instance, features); // draws initial places
+			});
 		});
 
-		instance.on('load', async () => {
-			setMap(instance);
-			await initPlacesSource(instance, features); // draws initial places
-		});
-
-		return () => instance.remove();
+		return () => mb.remove();
 	}, []);
 
 	useEffect(() => { // fix drag
