@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { PillButton, Reveal, ScrollView, SearchInput, showModal, toast, useAnimatedValue } from 'poon-ui';
+import { FilterButton, Reveal, ScrollView, SearchInput, showModal, toast, useAnimatedValue } from 'poon-ui';
 import { capitalize, pluralize } from '../../util/format.js';
 import { filterDates } from './filters.js';
 import { defaultLocation } from './constants.js';
@@ -59,7 +59,7 @@ const MapDemo = ({isVisible, animateIn}) => {
 					accessToken="pk.eyJ1IjoiaG90c3BvdG55YyIsImEiOiJja2FjbzlldzkxYmI2MnNyeXByeTMxeGVkIn0.hR5UA6Ejo8uW8ADPnoh1bA"
 				/>
 				<ScrollView className="pills" horizontal>
-					<PillButton
+					<FilterButton
 						LeftComponent={<img className="avatar" src="https://randomuser.me/api/portraits/women/73.jpg"/>}
 						onPress={() => {
 							if (removeKeys.length) {
@@ -74,22 +74,22 @@ const MapDemo = ({isVisible, animateIn}) => {
 						active={removeKeys.length}
 						caret={false}
 					/>
-					<PillButton
+					<FilterButton
 						title={categoryKeys.length ? pluralize(categoryKeys.length, 'category') : 'Category'}
 						href="/map/categories"
 						active={categoryKeys.length}
 					/>
-					<PillButton
+					<FilterButton
 						title={tagKeys.length ? pluralize(tagKeys.length, 'tag') : 'Tags'}
 						href="/map/tags"
 						active={tagKeys.length}
 					/>
-					<PillButton
+					<FilterButton
 						title={typeKeys.length === 1 ? capitalize(typeKeys[0]) : 'Type'}
 						onPress={() => showModal(<FilterType onSubmit={setTypeKeys} initialKeys={typeKeys}/>)}
 						active={typeKeys.length}
 					/>
-					<PillButton
+					<FilterButton
 						title={dateFilter === 'all' ? 'Dates' : filterDates.find(r => r._id === dateFilter).name}
 						onPress={() => showModal(<FilterDate onSubmit={setDateFilter} filterId={dateFilter}/>)}
 						active={dateFilter !== 'all'}

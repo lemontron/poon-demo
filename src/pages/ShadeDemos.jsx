@@ -1,11 +1,12 @@
 import React from 'react';
 import { DashboardIcon, Reveal } from 'poon-ui';
 
-const ShadeDemos = ({isVisible, animateIn}) => (
+const ShadeDemos = ({screen, isVisible, animateIn}) => (
 	<Reveal
 		title="Shade Demo"
 		isVisible={isVisible}
 		animateIn={animateIn}
+		screen={screen}
 	>
 		<div className="springboard">
 			<DashboardIcon title="Fluid" href="/shades/fluid" icon="water"/>

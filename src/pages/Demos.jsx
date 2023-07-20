@@ -75,6 +75,4 @@ const Demos = ({isVisible, animateIn, isTop}) => {
 	);
 };
 
-// AnimatedValue.defaultAnimationDuration = 1000;
-
 export default Demos;

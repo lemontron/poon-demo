@@ -15,6 +15,7 @@ const MapBox = forwardRef(({
 	placeId,
 	accessToken,
 }, ref) => {
+	const [mb, setMb] = useState(null);
 	const [map, setMap] = useState(null);
 	const el = useRef(null);
 	const userMarker = useRef(null);
@@ -122,31 +123,37 @@ const MapBox = forwardRef(({
 		});
 	}, [map, onPressPlace]);
 
+	// Instantiate map
 	useEffect(() => {
-		if (map) return; // initialize map only once
+		if (!mb) return;
 
+		const instance = new mb.Map({
+			'container': el.current,
+			'style': `mapbox://styles/hotspotnyc/${mapBoxStyle}`,
+			'center': center.coordinates,
+			'zoom': zoom,
+			'minZoom': 1,
+		});
+
+		instance.on('load', async () => {
+			setMap(instance);
+			await initPlacesSource(instance, features); // draws initial places
+		});
+
+		return () => instance.remove();
+	}, [mb]);
+
+	// Load scripts
+	useEffect(() => {
 		Promise.all([
 			loadScript('https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js', 'mapboxgl'),
 			loadCss('https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css'),
 		]).then(res => {
+			console.log('Loaded!', res);
 			const [mapbox] = res;
 			mapbox.accessToken = accessToken;
-
-			const instance = new mapbox.Map({
-				'container': el.current,
-				'style': `mapbox://styles/hotspotnyc/${mapBoxStyle}`,
-				'center': center.coordinates,
-				'zoom': zoom,
-				'minZoom': 1,
-			});
-
-			instance.on('load', async () => {
-				setMap(instance);
-				await initPlacesSource(instance, features); // draws initial places
-			});
+			setMb(mapbox);
 		});
-
-		return () => mb.remove();
 	}, []);
 
 	useEffect(() => { // fix drag

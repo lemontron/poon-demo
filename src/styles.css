@@ -36,6 +36,7 @@
 /* MAP DEMO */
 .map {background:#000 !important;}
 .mapbox {height:100%;}
+.mapboxgl-control-container {display:none;}
 .map-search {padding:0 10px 10px 10px;}
 .pills {padding:10px; position:absolute; top:0; left:0; right:0; display:flex; align-items:center; gap:10px;}
 .avatar {height:24px; width:24px; border-radius:12px;}
