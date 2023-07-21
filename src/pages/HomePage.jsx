@@ -18,6 +18,7 @@ const HomePage = ({}) => {
 						icon="arrow_downward"
 						title="Keep Going"
 						onClick={() => el.current.scrollToPage(1)}
+						color="clear"
 					/>
 				</div>
 				<div className="pitch-page">
@@ -26,6 +27,7 @@ const HomePage = ({}) => {
 						icon="arrow_downward"
 						title="Do It"
 						onClick={() => el.current.scrollToPage(2)}
+						color="clear"
 					/>
 				</div>
 				<div className="pitch-page">
@@ -34,6 +36,7 @@ const HomePage = ({}) => {
 						icon="arrow_downward"
 						title="Harder"
 						onClick={() => el.current.scrollToPage(3)}
+						color="clear"
 					/>
 				</div>
 				<div className="pitch-page">

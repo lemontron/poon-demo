@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { FilterButton, Reveal, ScrollView, SearchInput, showModal, toast, useAnimatedValue } from 'poon-ui';
+import { FilterButton, Reveal, ScrollView, showModal, TextInput, toast, useAnimatedValue } from 'poon-ui';
 import { capitalize, pluralize } from '../../util/format.js';
 import { filterDates } from './filters.js';
 import { defaultLocation } from './constants.js';
@@ -41,7 +41,8 @@ const MapDemo = ({isVisible, animateIn}) => {
 			className="map"
 		>
 			<div className="map-search">
-				<SearchInput
+				<TextInput
+					type="search"
 					placeholder="Search places..."
 				/>
 			</div>
