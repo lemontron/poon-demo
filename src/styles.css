@@ -16,13 +16,19 @@
     --shade-color:#1e1f22;
     --window-radius:0;
     --window-width:640px;
+    --alert-width:300px;
+    --alert-title-font-size:14px;
 }
 
 .pitch {flex:1; height:100%; display:flex; flex-direction:column;}
 .pitch img {height:24px;}
 .pitch .scroller {padding:0 20px;}
 .pitch-page {display:flex; height:100%; justify-content:center; align-items:center; flex-direction:column; padding:20px;}
-.pitch-page .btn {position:absolute; bottom:20px; right:20px;}
+.pitch-page-0 {background:#001 url(/assets/pitch0.svg) center center no-repeat; background-size:1000px;}
+.pitch-page-1 {background:#101 url(/assets/rose2.svg) center center no-repeat;}
+.pitch-page-2 {background:#001 url(/assets/rose2.svg) center center no-repeat;}
+.pitch-page-3 {background:#101 url(/assets/rose2.svg) center center no-repeat;}
+.pitch-page .btn-clear {background:rgba(255, 255, 255, .1); border-radius:18px; height:36px; width:36px; backdrop-filter:blur(4px);}
 .pitch p {margin:0 auto 20px auto; line-height:24px; text-align:center; font-size:17px; font-family:Caprasimo, sans-serif; color:#faa;}
 
 @media (min-width:640px) {
@@ -33,10 +39,15 @@
 
 /* DEMOS HOME */
 .demos-card {background:#000 !important;}
-.demos {background:#000 center center; background-size:cover; height:100%; position:relative; padding:20px 0 100px 0;}
-.springboard, .dock {display:flex; padding:10px; gap:10px; font-size:12px; width:100%;}
-.springboard {flex:1; padding-top:20px; flex-wrap:wrap;}
-.dock {position:absolute; bottom:0; left:0; right:0; height:100px; background:rgba(150, 150, 150, .1); backdrop-filter:blur(5px);}
+.demos {background:#100 url(/assets/rose.svg) bottom right no-repeat; height:100%; position:relative; padding:20px 0 100px 0;}
+.springboard, .dock {display:grid; grid-template-columns: auto auto auto auto; padding:10px; gap:10px; font-size:12px; width:100%;}
+.springboard {padding-top:20px;}
+.dock {position:absolute; bottom:0; left:0; right:0; height:100px; background:#000;}
+
+/* DASHBOARD ICON */
+.springboard-icon {height:80px; flex:1; display:flex; flex-direction:column; gap:5px; color:#eee; align-items:center; justify-content:center; min-width:80px;}
+.springboard-icon i {color:#fff; font-size:28px;}
+.springboard-icon .icon-frame {height:40px; width:40px; display:flex; justify-content:center; align-items:center; background:#322; border-radius:4px;}
 
 /* FILE BROWSER DEMO */
 .files {background:#000 !important;}
