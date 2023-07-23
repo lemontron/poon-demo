@@ -39,7 +39,7 @@
 
 /* DEMOS HOME */
 .demos-card {background:#000 !important;}
-.demos {background:#100 url(/assets/rose.svg) bottom right no-repeat; height:100%; position:relative; padding:20px 0 100px 0;}
+.demos {background:#100 url(/assets/rose.svg) bottom right no-repeat; height:100%; position:relative; padding:20px 0 100px 0; will-change:transform;}
 .springboard, .dock {display:grid; grid-template-columns: auto auto auto auto; padding:10px; gap:10px; font-size:12px; width:100%;}
 .springboard {padding-top:20px;}
 .dock {position:absolute; bottom:0; left:0; right:0; height:100px; background:#000;}
