@@ -1,7 +1,7 @@
 import './styles.css';
 import 'poon-ui/src/poon.css';
 import React, { Fragment } from 'react';
-import { PoonOverlays } from 'poon-ui';
+import { AnimatedValue, PoonOverlays } from 'poon-ui';
 import { defineRoute, Stack } from 'poon-router';
 import HomePage from './pages/HomePage.jsx';
 import FileBrowser from './pages/FileBrowser/FileBrowser.jsx';
@@ -38,5 +38,7 @@ const App = () => (
 		<PoonOverlays/>
 	</Fragment>
 );
+
+AnimatedValue.defaultAnimationDuration = 500;
 
 export default App;

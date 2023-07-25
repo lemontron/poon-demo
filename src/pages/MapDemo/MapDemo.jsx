@@ -1,5 +1,14 @@
 import React, { useRef, useState } from 'react';
-import { FilterButton, Reveal, ScrollView, showModal, TextInput, toast, useAnimatedValue } from 'poon-ui';
+import {
+	FilterButton,
+	Reveal,
+	ScrollView,
+	SegmentedController,
+	showModal,
+	TextInput,
+	toast,
+	useAnimatedValue,
+} from 'poon-ui';
 import { capitalize, pluralize } from '../../util/format.js';
 import { filterDates } from './filters.js';
 import { defaultLocation } from './constants.js';
@@ -7,6 +16,7 @@ import MapBox from './components/MapBox.jsx';
 import FloatingButtons from './components/FloatingButtons.jsx';
 
 const MapDemo = ({isVisible, animateIn}) => {
+	const [tab, setTab] = useState('Feed');
 	const map = useRef();
 	const pan = useAnimatedValue(0);
 
@@ -35,7 +45,7 @@ const MapDemo = ({isVisible, animateIn}) => {
 
 	return (
 		<Reveal
-			title="Map Demo"
+			title={<SegmentedController items={['Feed', 'Chat', 'Map']} value={tab} onChange={setTab}/>}
 			isVisible={isVisible}
 			animateIn={animateIn}
 			className="map"

@@ -6,7 +6,7 @@
     --header-bg:transparent;
     --font:"Inconsolata", -apple-system, BlinkMacSystemFont, sans-serif;
     --font-size:14px;
-    --input-border-radius:0;
+    --input-border-radius:4px;
     --input-height:34px;
     --input-font-size:14px;
     --header-font-size:14px;
@@ -14,7 +14,7 @@
     --separator-color:rgba(99, 99, 99, .3);
     --touchable-highlight:#222;
     --shade-color:#1e1f22;
-    --window-radius:0;
+    --window-radius:8px;
     --window-width:640px;
     --alert-width:300px;
     --alert-title-font-size:14px;
@@ -25,9 +25,8 @@
 .pitch .scroller {padding:0 20px;}
 .pitch-page {display:flex; height:100%; justify-content:center; align-items:center; flex-direction:column; padding:20px;}
 .pitch-page-0 {background:#001 url(/assets/pitch0.svg) center center no-repeat; background-size:1000px;}
-.pitch-page-1 {background:#101 url(/assets/rose2.svg) center center no-repeat;}
-.pitch-page-2 {background:#001 url(/assets/rose2.svg) center center no-repeat;}
-.pitch-page-3 {background:#101 url(/assets/rose2.svg) center center no-repeat;}
+.pitch-page-1 {background:#101 url(/assets/pitch1.svg) center center no-repeat;}
+.pitch-page-2 {background:#001 url(/assets/pitch2.svg) center center no-repeat;}
 .pitch-page .btn-clear {background:rgba(255, 255, 255, .1); border-radius:18px; height:36px; width:36px; backdrop-filter:blur(4px);}
 .pitch p {margin:0 auto 20px auto; line-height:24px; text-align:center; font-size:17px; font-family:Caprasimo, sans-serif; color:#faa;}
 

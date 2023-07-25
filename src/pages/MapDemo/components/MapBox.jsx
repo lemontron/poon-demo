@@ -149,7 +149,7 @@ const MapBox = forwardRef(({
 			loadScript('https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js', 'mapboxgl'),
 			loadCss('https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css'),
 		]).then(res => {
-			console.log('Loaded!', res);
+			// console.log('Loaded!', res);
 			const [mapbox] = res;
 			mapbox.accessToken = accessToken;
 			setMb(mapbox);
