@@ -16,7 +16,7 @@ import MapBox from './components/MapBox.jsx';
 import FloatingButtons from './components/FloatingButtons.jsx';
 
 const MapDemo = ({isVisible, animateIn}) => {
-	const [tab, setTab] = useState('Feed');
+	const [tab, setTab] = useState('map');
 	const map = useRef();
 	const pan = useAnimatedValue(0);
 
@@ -45,7 +45,17 @@ const MapDemo = ({isVisible, animateIn}) => {
 
 	return (
 		<Reveal
-			title={<SegmentedController items={['Feed', 'Chat', 'Map']} value={tab} onChange={setTab}/>}
+			title={
+				<SegmentedController
+					options={[
+						{name: 'Feed', value: 'feed'},
+						{name: 'Chat', value: 'chat'},
+						{name: 'Map', value: 'map'},
+					]}
+					value={tab}
+					onChange={setTab}
+				/>
+			}
 			isVisible={isVisible}
 			animateIn={animateIn}
 			className="map"
