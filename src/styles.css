@@ -13,7 +13,7 @@
     --subtitle-color:#888;
     --separator-color:rgba(99, 99, 99, .3);
     --touchable-highlight:#222;
-    --shade-color:#1e1f22;
+    --shade-color:rgba(30, 31, 34, .8);
     --window-radius:8px;
     --window-width:640px;
     --alert-width:300px;
@@ -79,6 +79,7 @@
 .fluid-card {background:#333 !important;}
 
 /* GALLERY DEMO */
+.gallery-demo {background:#223 !important;}
 .gallery-grid {display:grid; grid-template-columns:auto auto auto; gap:2px;}
 .gallery-grid .touchable {width:100%; height:100%; aspect-ratio:1;}
 .gallery-grid img {aspect-ratio:1; width:100%; object-fit:cover;}

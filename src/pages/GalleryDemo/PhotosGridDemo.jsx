@@ -15,6 +15,7 @@ const PhotosGridDemo = ({isVisible, animateIn}) => {
 			isVisible={isVisible}
 			animateIn={animateIn}
 			HeaderComponent={null}
+			className="gallery-demo"
 		>
 			<ScrollView>
 				<div className="gallery-grid" children={images.map(renderItem)}/>
