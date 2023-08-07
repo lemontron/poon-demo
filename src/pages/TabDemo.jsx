@@ -3,7 +3,11 @@ import { Window, Placeholder, ViewPager, ScrollView, Reveal } from 'poon-ui';
 import LongList from '../components/LongList.jsx';
 
 const TabDemo = ({isVisible, animateIn}) => (
-	<Reveal title="Tabs" isVisible={isVisible} animateIn={animateIn}>
+	<Reveal
+		title="Tabs"
+		isVisible={isVisible}
+		animateIn={animateIn}
+	>
 		<ViewPager titles={['ScrollView', 'Placeholder']}>
 			<ScrollView>
 				<LongList/>

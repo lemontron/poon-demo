@@ -1,7 +1,6 @@
 import React, { Fragment } from 'react';
 import {
 	BreadCrumbs,
-	Button,
 	Card,
 	Dropdown,
 	DropdownItem,
@@ -17,7 +16,7 @@ import FileItem from './FileItem.jsx';
 const demoFiles = [{
 	_id: randomId(),
 	type: 'file',
-	name: 'image.jpg',
+	name: 'lian13.jpg',
 	size: 100000,
 	addedOn: new Date(),
 	icon: 'image',

@@ -6,7 +6,6 @@ const ShadeDemos = ({screen, isVisible, animateIn}) => (
 		title="Shade Demo"
 		isVisible={isVisible}
 		animateIn={animateIn}
-		screen={screen}
 	>
 		<div className="springboard">
 			<DashboardIcon title="Fluid" href="/shades/fluid" icon="water"/>

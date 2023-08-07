@@ -12,7 +12,7 @@ const useTime = () => {
 	return time;
 };
 
-const ClockDemo = ({isVisible}) => {
+const ClockDemo = ({isVisible, animateIn}) => {
 	const time = useTime();
 	const formattedTime = time.toLocaleString('en-US', {
 		hour: 'numeric',
@@ -25,6 +25,7 @@ const ClockDemo = ({isVisible}) => {
 	return (
 		<Reveal
 			isVisible={isVisible}
+			animateIn={animateIn}
 			className="clock-card"
 			HeaderComponent={null}
 		>

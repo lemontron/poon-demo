@@ -12,7 +12,7 @@ const Demos = ({isVisible, animateIn, isTop}) => {
 	useEffect(() => {
 		return zoom.on(val => {
 			el.current.style.transform = `scale(${2 - val})`;
-			el.current.style.opacity = val;
+			// el.current.style.opacity = val;
 		});
 	}, []);
 
@@ -32,21 +32,22 @@ const Demos = ({isVisible, animateIn, isTop}) => {
 						<DashboardIcon title="Alerts" icon="notifications" href="/alert"/>
 						<DashboardIcon title="Shades" icon="curtains_closed" href="/shades"/>
 						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
-						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
-						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
-						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
+						<DashboardIcon title="Photos" icon="photo" href="/photos"/>
 					</div>
 					<div className="springboard">
-						<DashboardIcon title="Alerts" icon="notifications" href="/alert"/>
-						<DashboardIcon title="Shades" icon="curtains_closed" href="/shades"/>
+						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
+						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
+						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
+						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
+						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
 						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
 						<DashboardIcon title="Tabs" icon="tab" href="/tab"/>
 					</div>
 				</ViewPager>
 				<div className="dock">
-					<DashboardIcon title="Files" icon="folder" href="/files"/>
-					<DashboardIcon title="Files" icon="folder" href="/files"/>
 					<DashboardIcon title="Map" icon="place" href="/map"/>
+					<DashboardIcon title="Files" icon="folder" href="/files"/>
+					<DashboardIcon title="Files" icon="folder" href="/files"/>
 					<DashboardIcon title="Clock" icon="watch_later" href="/clock"/>
 				</div>
 			</div>

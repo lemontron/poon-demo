@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host",
     "build": "vite build && git add dist/*",
     "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
@@ -15,17 +15,18 @@
   },
   "homepage": "https://jamesloper.github.io/poon-demo",
   "devDependencies": {
-    "@types/react": "^18.0.37",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^4.0.0",
-    "eslint": "^8.44.0",
-    "eslint-plugin-react": "^7.32.2",
+    "@types/react": "^18.2.18",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.0.4",
+    "eslint": "^8.46.0",
+    "eslint-plugin-react": "^7.33.1",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.1",
-    "vite": "^4.3.9"
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "vite": "^4.4.8"
   },
   "workspaces": [
     "../poon-ui",
-    "../poon-router"
+    "../poon-router",
+    "../poon-readme"
   ]
 }

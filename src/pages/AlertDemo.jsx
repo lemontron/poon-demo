@@ -1,7 +1,7 @@
 import React from 'react';
 import { List, Reveal, showAlert, toast, TouchableRow } from 'poon-ui';
 
-const AlertDemo = ({isVisible}) => {
+const AlertDemo = ({isVisible, animateIn}) => {
 	const handleResult = (id) => {
 		toast(id ? `You pressed ${id}` : 'You dismissed the alert');
 	};
@@ -66,6 +66,7 @@ const AlertDemo = ({isVisible}) => {
 		<Reveal
 			title="Alert Demo"
 			isVisible={isVisible}
+			animateIn={animateIn}
 			children={
 				<List className="alert-demo">
 					<TouchableRow
