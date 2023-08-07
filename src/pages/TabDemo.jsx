@@ -1,5 +1,5 @@
 import React from 'react';
-import { Window, Placeholder, ViewPager, ScrollView, Reveal } from 'poon-ui';
+import { Reveal, Placeholder, ViewPager, ScrollView } from 'poon-ui';
 import LongList from '../components/LongList.jsx';
 
 const TabDemo = ({isVisible, animateIn}) => (
@@ -8,11 +8,12 @@ const TabDemo = ({isVisible, animateIn}) => (
 		isVisible={isVisible}
 		animateIn={animateIn}
 	>
-		<ViewPager titles={['ScrollView', 'Placeholder']}>
+		<ViewPager titles={['ScrollView', 'Placeholder', 'Placeholder']}>
 			<ScrollView>
 				<LongList/>
 			</ScrollView>
 			<Placeholder title="Sexy Ipsum"/>
+			<Placeholder title="Sexy Ipsum2"/>
 		</ViewPager>
 	</Reveal>
 );
