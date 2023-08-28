@@ -79,7 +79,7 @@
 .fluid-card {background:#333 !important;}
 
 /* GALLERY DEMO */
-.gallery-demo {background:#223 !important;}
+.gallery-demo {background:#111 !important;}
 .gallery-grid {display:grid; grid-template-columns:auto auto auto; gap:2px;}
 .gallery-grid .touchable {width:100%; height:100%; aspect-ratio:1;}
 .gallery-grid img {aspect-ratio:1; width:100%; object-fit:cover;}

@@ -8,22 +8,27 @@ import {
 	HeaderButton,
 	List,
 	Placeholder,
-	Reveal,
+	Reveal, ScrollView,
 } from 'poon-ui';
 import { randomId } from 'poon-router/util.js';
-import FileItem from './FileItem.jsx';
+import images from '../GalleryDemo/photos.json';
 
-const demoFiles = [{
+import FileItem from './FileItem.jsx';
+import { FILE, FOLDER } from '../../util/constants.js';
+
+const transformImage = (name) => ({
 	_id: randomId(),
-	type: 'file',
-	name: 'lian13.jpg',
-	size: 100000,
+	type: FILE,
+	name: name.split('/').pop(),
+	size: 256000,
 	addedOn: new Date(),
-	icon: 'image',
-	path: '/',
-}, {
+	icon: 'description',
+	path: '/gallery',
+});
+
+const demoFiles = [...images.map(transformImage), {
 	_id: randomId(),
-	type: 'file',
+	type: FILE,
 	name: 'banana.txt',
 	size: 2000,
 	addedOn: new Date(),
@@ -31,33 +36,38 @@ const demoFiles = [{
 	path: '/',
 }, {
 	_id: randomId(),
-	type: 'folder',
+	type: FOLDER,
+	name: 'gallery',
+	path: '/',
+}, {
+	_id: randomId(),
+	type: FOLDER,
 	name: 'archives',
 	path: '/',
 }, {
 	_id: randomId(),
-	type: 'file',
+	type: FILE,
 	name: 'pictures-of-cats.zip',
 	path: '/archives',
 	size: 2678756000,
 	icon: 'archive',
 }, {
 	_id: randomId(),
-	type: 'file',
+	type: FILE,
 	name: 'pictures-of-birds.zip',
 	path: '/archives',
 	size: 91289874,
 	icon: 'archive',
 }, {
 	_id: randomId(),
-	type: 'file',
+	type: FILE,
 	name: 'pictures-of-dinosaurs.zip',
 	path: '/archives',
 	size: 40409904,
 	icon: 'archive',
 }, {
 	_id: randomId(),
-	type: 'file',
+	type: FILE,
 	name: 'lorem.txt',
 	path: '/archives',
 	size: 23124,
@@ -70,7 +80,7 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 	// const folder = demoFiles.find(r => r.type === 'folder' && r.path === path);
 	const files = demoFiles.filter(r => r.path === path);
 
-	console.log(path, files);
+	// console.log(path, files);
 
 	const renderFab = () => {
 		return (
@@ -94,13 +104,15 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 		return (
 			<Fragment>
 				<BreadCrumbs path={path}/>
-				<List
-					ListEmptyComponent={<Placeholder message="Empty Folder"/>}
-					items={files}
-					renderItem={doc => (
-						<FileItem key={doc._id} file={doc}/>
-					)}
-				/>
+				<ScrollView>
+					<List
+						ListEmptyComponent={<Placeholder message="Empty Folder"/>}
+						items={files}
+						renderItem={doc => (
+							<FileItem key={doc._id} file={doc}/>
+						)}
+					/>
+				</ScrollView>
 				{renderFab()}
 			</Fragment>
 		);
@@ -125,6 +137,7 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 			animateIn={animateIn}
 			headerRight={<HeaderButton icon="search" href="/files/search"/>}
 			children={renderBody()}
+			hasScrollView={false}
 			className="files"
 		/>
 	);
