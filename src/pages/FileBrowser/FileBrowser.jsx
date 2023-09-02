@@ -16,10 +16,10 @@ import images from '../GalleryDemo/photos.json';
 import FileItem from './FileItem.jsx';
 import { FILE, FOLDER } from '../../util/constants.js';
 
-const transformImage = (name) => ({
+const transformImage = (file) => ({
 	_id: randomId(),
 	type: FILE,
-	name: name.split('/').pop(),
+	name: file.url.split('/').pop(),
 	size: 256000,
 	addedOn: new Date(),
 	icon: 'description',

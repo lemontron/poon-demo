@@ -1,15 +1,15 @@
 import React from 'react';
 import { Window, GalleryItem, ViewPager } from 'poon-ui';
-import images from './photos.json';
+import files from './photos.json';
 
-const renderItem = (image) => (
-	<GalleryItem key={image}>
-		<img src={image} draggable={false}/>
+const renderItem = (file) => (
+	<GalleryItem key={file.url}>
+		<img src={file.url} draggable={false}/>
 	</GalleryItem>
 );
 
 const GalleryDemo = ({screen, isVisible}) => {
-	const page = parseInt(screen.useQueryParam('index'));
+	const page = screen.useQueryParam('index', parseInt);
 	return (
 		<Window
 			isVisible={isVisible}
@@ -17,8 +17,9 @@ const GalleryDemo = ({screen, isVisible}) => {
 			presentation="fullscreen"
 		>
 			<ViewPager
-				children={images.map(renderItem)}
+				children={files.map(renderItem)}
 				page={page}
+				gap={15}
 			/>
 		</Window>
 	);

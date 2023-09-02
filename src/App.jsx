@@ -17,7 +17,7 @@ import FilterCategories from './pages/MapDemo/FilterCategories.jsx';
 import FilterTags from './pages/MapDemo/FilterTags.jsx';
 import ClockDemo from './pages/ClockDemo.jsx';
 import GalleryDemo from './pages/GalleryDemo/GalleryDemo.jsx';
-import PhotosGridDemo from './pages/GalleryDemo/PhotosGridDemo.jsx';
+import PhotosDemo from './pages/GalleryDemo/PhotosDemo.jsx';
 
 defineRoute('Home', '/', HomePage);
 defineRoute('Demos', '/demos', Demos);
@@ -32,13 +32,12 @@ defineRoute('MapDemo', '/map', MapDemo);
 defineRoute('MapDemoFilterCategories', '/map/categories', FilterCategories);
 defineRoute('MapDemoFilterTags', '/map/tags', FilterTags);
 defineRoute('ClockDemo', '/clock', ClockDemo);
-defineRoute('PhotosDemo', '/photos', PhotosGridDemo);
+defineRoute('PhotosDemo', '/photos', PhotosDemo);
 defineRoute('GalleryDemo', '/photos/gallery', GalleryDemo);
 
 const App = () => (
 	<Fragment>
 		<Stack filter="main"/>
-		<Stack filter="modal"/>
 		<PoonOverlays/>
 	</Fragment>
 );
