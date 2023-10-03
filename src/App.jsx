@@ -1,5 +1,5 @@
 import './styles.css';
-import 'poon-ui/src/poon.css';
+import 'poon-ui/poon.css';
 import React, { Fragment } from 'react';
 import { AnimatedValue, PoonOverlays } from 'poon-ui';
 import { defineRoute, Stack } from 'poon-router';
