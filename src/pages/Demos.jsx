@@ -21,6 +21,7 @@ const Demos = ({isVisible, animateIn, isTop}) => {
 			showNotification({
 				'title': 'Welcome!',
 				'body': 'This demo showcases capabilities of Poon UI.',
+				'icon': 'star',
 			});
 		}, 500);
 	}, []);
