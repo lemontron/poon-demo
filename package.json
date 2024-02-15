@@ -10,23 +10,21 @@
     "echo": "echo hey"
   },
   "dependencies": {
+    "@babel/preset-env": "^7.23.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "homepage": "https://jamesloper.github.io/poon-demo",
   "devDependencies": {
-    "@types/react": "^18.2.18",
-    "@types/react-dom": "^18.2.7",
-    "@vitejs/plugin-react": "^4.0.4",
-    "eslint": "^8.46.0",
-    "eslint-plugin-react": "^7.33.1",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.56.0",
+    "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.3",
-    "vite": "^4.4.8"
+    "eslint-plugin-react-refresh": "^0.4.5",
+    "vite": "^5.0.12"
   },
   "workspaces": [
     "../poon-ui",
-    "../poon-router",
-    "../poon-readme"
+    "../poon-router"
   ]
 }
