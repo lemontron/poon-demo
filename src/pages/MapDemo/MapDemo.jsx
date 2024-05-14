@@ -9,10 +9,10 @@ import {
 	toast,
 	useAnimatedValue,
 } from 'poon-ui';
+import MapBox from 'poon-map';
 import { capitalize, pluralize } from '../../util/format.js';
 import { filterDates } from './filters.js';
 import { defaultLocation } from './constants.js';
-import MapBox from './components/MapBox.jsx';
 import FloatingButtons from './components/FloatingButtons.jsx';
 
 const MapDemo = ({isVisible, animateIn}) => {

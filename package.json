@@ -25,6 +25,7 @@
   },
   "workspaces": [
     "../poon-ui",
-    "../poon-router"
+    "../poon-router",
+    "../poon-map"
   ]
 }

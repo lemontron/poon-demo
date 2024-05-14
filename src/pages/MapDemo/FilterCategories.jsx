@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { CheckBox, Emoji, List, TouchableRow, Window } from 'poon-ui';
+import { CheckBox, Emoji, List, TouchableRow, Window, useFilterState } from 'poon-ui';
 import { categories } from './constants.js';
-import { useFilterState } from './components/map-util.jsx';
 
 const searchCategories = (term) => {
 	term = term.toLowerCase().trim();
