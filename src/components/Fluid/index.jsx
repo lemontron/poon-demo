@@ -1,4 +1,4 @@
-import React, { forwardRef, useEffect, useImperativeHandle, useRef } from 'react';
+import { useEffect, useImperativeHandle, useRef } from 'react';
 import { createFluid } from './fluid';
 
 const config = {
@@ -14,7 +14,7 @@ const config = {
 	COLOR: {r: .05, g: .05, b: .05},
 };
 
-const Fluid = forwardRef((props, ref) => {
+const Fluid = ({ref}) => {
 	const fluidRef = useRef();
 	const canvasRef = useRef();
 
@@ -35,6 +35,6 @@ const Fluid = forwardRef((props, ref) => {
 			<canvas ref={canvasRef} width={window.innerWidth} height={window.innerHeight}/>
 		</div>
 	);
-});
+};
 
 export default Fluid;

@@ -1,6 +1,6 @@
-import React, { forwardRef, useImperativeHandle, useRef } from 'react';
+import { useImperativeHandle, useRef } from 'react';
 
-const RainbowShade = forwardRef((props, ref) => {
+const RainbowShade = ({ref}) => {
 	const el = useRef();
 
 	useImperativeHandle(ref, () => ({
@@ -12,6 +12,6 @@ const RainbowShade = forwardRef((props, ref) => {
 	}));
 
 	return <div className="shade" ref={el}/>;
-});
+};
 
 export default RainbowShade;
