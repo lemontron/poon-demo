@@ -3,14 +3,6 @@ import { prettyBytes } from '../../util/format';
 import { TouchableRow, Icon, showActionSheet } from 'poon-ui';
 import { createPath } from '../../util/fs';
 
-export const renderFileIcon = (file) => {
-	return <Icon icon={file.icon}/>;
-};
-
-const renderFolderIcon = (folder) => {
-	return <Icon icon="folder"/>;
-};
-
 const FileItem = ({file}) => {
 	const [deleting, setDeleting] = useState(false);
 
@@ -35,7 +27,7 @@ const FileItem = ({file}) => {
 
 	if (file.type === 'folder') return (
 		<TouchableRow
-			leftIcon={renderFolderIcon(file)}
+			leftIcon={<Icon icon="folder"/>}
 			title={file.name}
 			onPressMore={showMore}
 			href={createPath('files', file.path, file.name)}
@@ -44,7 +36,7 @@ const FileItem = ({file}) => {
 
 	return (
 		<TouchableRow
-			leftIcon={renderFileIcon(file)}
+			leftIcon={<Icon icon={file.icon}/>}
 			onPressMore={showMore}
 			title={file.name}
 			meta={`${prettyBytes(file.size)}`}

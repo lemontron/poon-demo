@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { CheckBox, Emoji, List, TouchableRow, Window, useFilterState } from 'poon-ui';
-import { categories } from './constants.js';
+import { CheckBox, Emoji, List, TouchableRow, Window, ScrollView, useFilterState } from 'poon-ui';
+import { categories } from './constants';
 
 const searchCategories = (term) => {
 	term = term.toLowerCase().trim();
@@ -20,30 +20,32 @@ const FilterCategories = ({isVisible, animateIn}) => {
 			isVisible={isVisible}
 			animateIn={animateIn}
 		>
-			<List
-				HeaderComponent={
-					<TouchableRow
-						title={keys ? `${keys.length || 'None'} selected` : 'All selected'}
-						toggle
-						onClick={toggleAll}
-						RightComponent={
-							<CheckBox active={!keys} undetermined={keys && keys.length > 0}/>
-						}
-					/>
-				}
-				items={searchCategories(search)}
-				keyExtractor={r => r.name}
-				renderItem={item => (
-					<TouchableRow
-						leftIcon={<Emoji emoji={item.emoji}/>}
-						title={item.name}
-						onClick={() => toggleKey(item.name)}
-						RightComponent={
-							<CheckBox active={keys ? keys.includes(item.name) : true}/>
-						}
-					/>
-				)}
-			/>
+			<ScrollView>
+				<List
+					HeaderComponent={
+						<TouchableRow
+							title={keys ? `${keys.length || 'None'} selected` : 'All selected'}
+							toggle
+							onClick={toggleAll}
+							RightComponent={
+								<CheckBox active={!keys} undetermined={keys && keys.length > 0}/>
+							}
+						/>
+					}
+					items={searchCategories(search)}
+					keyExtractor={r => r.name}
+					renderItem={item => (
+						<TouchableRow
+							leftIcon={<Emoji emoji={item.emoji}/>}
+							title={item.name}
+							onClick={() => toggleKey(item.name)}
+							RightComponent={
+								<CheckBox active={keys ? keys.includes(item.name) : true}/>
+							}
+						/>
+					)}
+				/>
+			</ScrollView>
 		</Window>
 	);
 };

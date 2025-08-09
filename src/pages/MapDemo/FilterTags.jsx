@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Window, TouchableRow, List, CheckBox, Tag } from 'poon-ui';
-import { useFilterState } from './components/map-util.jsx';
+import { Window, TouchableRow, List, CheckBox, Tag, ScrollView, useFilterState } from 'poon-ui';
 
 const filterTags = (tags, search) => {
 	search = search.toLowerCase();
@@ -34,24 +33,26 @@ const FilterTags = ({isVisible, animateIn}) => {
 			isVisible={isVisible}
 			animateIn={animateIn}
 		>
-			<List
-				HeaderComponent={
-					<TouchableRow
-						title={keys ? `${keys.length || 'None'} selected` : 'All selected'}
-						active={!keys}
-						onClick={toggleAll}
-						RightComponent={<CheckBox undetermined={keys && keys.length > 0} active={!keys}/>}
-					/>
-				}
-				items={filterTags(tags, search)}
-				renderItem={tag => (
-					<TouchableRow
-						children={<Tag tag={tag._id} count={tag.count}/>}
-						onClick={() => toggleKey(tag._id)}
-						RightComponent={<CheckBox active={keys ? keys.includes(tag._id) : true}/>}
-					/>
-				)}
-			/>
+			<ScrollView>
+				<List
+					HeaderComponent={
+						<TouchableRow
+							title={keys ? `${keys.length || 'None'} selected` : 'All selected'}
+							active={!keys}
+							onClick={toggleAll}
+							RightComponent={<CheckBox undetermined={keys && keys.length > 0} active={!keys}/>}
+						/>
+					}
+					items={filterTags(tags, search)}
+					renderItem={tag => (
+						<TouchableRow
+							children={<Tag tag={tag._id} count={tag.count}/>}
+							onClick={() => toggleKey(tag._id)}
+							RightComponent={<CheckBox active={keys ? keys.includes(tag._id) : true}/>}
+						/>
+					)}
+				/>
+			</ScrollView>
 		</Window>
 	);
 };

@@ -10,7 +10,7 @@ import {
 	Placeholder,
 	Reveal, ScrollView,
 } from 'poon-ui';
-import { randomId } from 'poon-router/util.js';
+import { randomId } from 'poon-router';
 import images from '../GalleryDemo/photos.json';
 
 import FileItem from './FileItem.jsx';

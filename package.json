@@ -10,22 +10,28 @@
     "echo": "echo hey"
   },
   "dependencies": {
-    "@babel/preset-env": "^7.23.8",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "@babel/preset-env": "^7.28.0",
+    "poon-map": "^1.0.0",
+    "poon-permissions": "^1.0.0",
+    "poon-router": "^1.1.3",
+    "poon-ui": "^1.1.5",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "rollup": "^4.46.2"
   },
   "homepage": "https://jamesloper.github.io/poon-demo",
   "devDependencies": {
-    "@vitejs/plugin-react": "^4.2.1",
-    "eslint": "^8.56.0",
-    "eslint-plugin-react": "^7.33.2",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.5",
-    "vite": "^5.0.12"
+    "@vitejs/plugin-react": "^5.0.0",
+    "eslint": "^9.32.0",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "vite": "^7.1.1"
   },
   "workspaces": [
     "../poon-ui",
     "../poon-router",
-    "../poon-map"
+    "../poon-map",
+    "../poon-permissions"
   ]
 }

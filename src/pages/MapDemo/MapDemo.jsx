@@ -9,16 +9,18 @@ import {
 	toast,
 	useAnimatedValue,
 } from 'poon-ui';
+import { useLocation } from 'poon-permissions';
 import MapBox from 'poon-map';
-import { capitalize, pluralize } from '../../util/format.js';
-import { filterDates } from './filters.js';
-import { defaultLocation } from './constants.js';
-import FloatingButtons from './components/FloatingButtons.jsx';
+import { capitalize, pluralize } from '../../util/format';
+import { filterDates } from './filters';
+import { defaultLocation } from './constants';
+import FloatingButtons from './components/FloatingButtons';
 
 const MapDemo = ({isVisible, animateIn}) => {
 	const [tab, setTab] = useState('map');
 	const map = useRef();
 	const pan = useAnimatedValue(0);
+	const location = useLocation();
 
 	// Filters
 	const [removeKeys, setRemoveKeys] = useState([]);
@@ -60,7 +62,7 @@ const MapDemo = ({isVisible, animateIn}) => {
 			animateIn={animateIn}
 			className="map"
 		>
-			<div className="map-search">
+			<div className="header-search">
 				<TextInput
 					type="search"
 					placeholder="Search places..."
@@ -71,51 +73,58 @@ const MapDemo = ({isVisible, animateIn}) => {
 					ref={map}
 					features={features}
 					center={defaultLocation}
-					onChangeBounds={setViewport}
+					onChangeViewport={setViewport}
 					onMoveStart={moveMap}
-					location={defaultLocation}
+					location={location}
 					followUser={followUser}
 					onPressPlace={setPlaceId}
 					placeId={placeId}
 					accessToken="pk.eyJ1IjoiaG90c3BvdG55YyIsImEiOiJja2FjbzlldzkxYmI2MnNyeXByeTMxeGVkIn0.hR5UA6Ejo8uW8ADPnoh1bA"
 				/>
-				<ScrollView className="pills" horizontal>
-					<FilterButton
-						LeftComponent={<img className="avatar" src="https://randomuser.me/api/portraits/women/73.jpg"/>}
-						onPress={() => {
-							if (removeKeys.length) {
-								setRemoveKeys([]);
-								toast('Your spots are visible');
-							} else {
-								setRemoveKeys([1]);
-								toast('Your spots are hidden');
-							}
-						}}
-						checked={removeKeys.length === 0}
-						active={removeKeys.length}
-						caret={false}
-					/>
-					<FilterButton
-						title={categoryKeys.length ? pluralize(categoryKeys.length, 'category') : 'Category'}
-						href="/map/categories"
-						active={categoryKeys.length}
-					/>
-					<FilterButton
-						title={tagKeys.length ? pluralize(tagKeys.length, 'tag') : 'Tags'}
-						href="/map/tags"
-						active={tagKeys.length}
-					/>
-					<FilterButton
-						title={typeKeys.length === 1 ? capitalize(typeKeys[0]) : 'Type'}
-						onPress={() => showModal(<FilterType onSubmit={setTypeKeys} initialKeys={typeKeys}/>)}
-						active={typeKeys.length}
-					/>
-					<FilterButton
-						title={dateFilter === 'all' ? 'Dates' : filterDates.find(r => r._id === dateFilter).name}
-						onPress={() => showModal(<FilterDate onSubmit={setDateFilter} filterId={dateFilter}/>)}
-						active={dateFilter !== 'all'}
-					/>
-				</ScrollView>
+				<div className="map-controls-scroller">
+					<ScrollView horizontal>
+						<div className="pills">
+							<FilterButton
+								LeftComponent={<img className="avatar"
+													src="https://randomuser.me/api/portraits/women/73.jpg"/>}
+								onPress={() => {
+									if (removeKeys.length) {
+										setRemoveKeys([]);
+										toast('Your spots are visible');
+									} else {
+										setRemoveKeys([1]);
+										toast('Your spots are hidden');
+									}
+								}}
+								checked={removeKeys.length === 0}
+								active={removeKeys.length}
+								caret={false}
+							/>
+							<FilterButton
+								title={categoryKeys.length ? pluralize(categoryKeys.length, 'category') : 'Category'}
+								href="/map/categories"
+								active={categoryKeys.length}
+							/>
+							<FilterButton
+								title={tagKeys.length ? pluralize(tagKeys.length, 'tag') : 'Tags'}
+								href="/map/tags"
+								active={tagKeys.length}
+							/>
+							<FilterButton
+								title={typeKeys.length === 1 ? capitalize(typeKeys[0]) : 'Type'}
+								onPress={() => showModal(<FilterType onSubmit={setTypeKeys} initialKeys={typeKeys}/>)}
+								active={typeKeys.length}
+								disabled={true}
+							/>
+							<FilterButton
+								title={dateFilter === 'all' ? 'Dates' : filterDates.find(r => r._id === dateFilter).name}
+								onPress={() => showModal(<FilterDate onSubmit={setDateFilter} filterId={dateFilter}/>)}
+								active={dateFilter !== 'all'}
+								disabled={true}
+							/>
+						</div>
+					</ScrollView>
+				</div>
 			</div>
 			<FloatingButtons
 				pan={pan}

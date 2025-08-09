@@ -1,30 +1,8 @@
-import React, { useEffect, useRef } from 'react';
-import { Card, DashboardIcon, ViewPager, showNotification } from 'poon-ui';
+import React, { useRef } from 'react';
+import { Card, DashboardIcon, ViewPager } from 'poon-ui';
 
-const Demos = ({isVisible, animateIn, isTop}) => {
+const Demos = ({isVisible, animateIn}) => {
 	const el = useRef();
-	// const zoom = useAnimatedValue(1);
-	//
-	// useEffect(() => {
-	// 	zoom.spring(isTop ? 1 : 0);
-	// }, [isTop]);
-	//
-	// // useEffect(() => {
-	// // 	return zoom.on(val => {
-	// // 		el.current.style.transform = `scale(${2 - val})`;
-	// // 		// el.current.style.opacity = val;
-	// // 	});
-	// // }, []);
-
-	useEffect(() => {
-		setTimeout(() => {
-			showNotification({
-				'title': 'Welcome!',
-				'body': 'This demo showcases capabilities of Poon UI.',
-				'icon': 'star',
-			});
-		}, 500);
-	}, []);
 
 	return (
 		<Card
@@ -37,7 +15,7 @@ const Demos = ({isVisible, animateIn, isTop}) => {
 			disableGestures
 		>
 			<div className="demos" ref={el}>
-				<ViewPager dots>
+				<ViewPager showDots>
 					<div className="springboard">
 						<DashboardIcon title="Photos" icon="photo" href="/photos"/>
 						<DashboardIcon title="Map" icon="place" href="/map"/>

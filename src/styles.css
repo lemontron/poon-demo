@@ -10,6 +10,7 @@
     --input-border-radius:4px;
     --input-height:34px;
     --input-font-size:14px;
+    --input-background:#333;
     --header-font-size:14px;
     --subtitle-color:#888;
     --separator-color:rgba(99, 99, 99, .3);
@@ -40,13 +41,6 @@
 /* DEMOS HOME */
 .demos-card {background:#000 !important;}
 .demos {background:#000 url(/assets/rose.svg) bottom right no-repeat; height:100%; position:relative; padding:10px 0; will-change:transform;}
-.springboard {display:grid; grid-template-columns: auto auto auto auto; padding:10px; gap:10px; font-size:12px; width:100%;}
-.springboard {padding-top:20px;}
-
-/* DASHBOARD ICON */
-.springboard-icon {height:80px; flex:1; display:flex; flex-direction:column; gap:5px; color:#eee; align-items:center; justify-content:center; min-width:80px;}
-.springboard-icon i {color:#fff; font-size:28px;}
-.springboard-icon .icon-frame {height:40px; width:40px; display:flex; justify-content:center; align-items:center; background:#322; border-radius:4px;}
 
 /* FILE BROWSER DEMO */
 .files {background:#000 !important;}
@@ -56,10 +50,11 @@
 .map {background:#000 !important;}
 .mapbox {height:100%;}
 .mapboxgl-control-container {display:none;}
-.map-search {padding:0 10px 10px 10px;}
-.pills {padding:10px; position:absolute; top:0; left:0; right:0; display:flex; align-items:center; gap:10px;}
 .avatar {height:24px; width:24px; border-radius:12px;}
 .map-container {position:relative; flex:1;}
+.map-controls-scroller {position:absolute; top:0; left:0; right:0; z-index:1;}
+.pills {display:flex; align-items:center; gap:10px; padding:10px; min-width:0;}
+
 .user-location-marker {height:20px; width:20px; border-radius:10px; background-color:#fff;}
 .user-location-marker:after {content:""; display:block; border-radius:8px; margin:2px; height:16px; width:16px; background-color:#48f;}
 
