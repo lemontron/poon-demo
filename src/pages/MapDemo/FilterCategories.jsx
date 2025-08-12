@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { CheckBox, Emoji, List, TouchableRow, Window, ScrollView, useFilterState } from 'poon-ui';
 import { categories } from './constants';
 

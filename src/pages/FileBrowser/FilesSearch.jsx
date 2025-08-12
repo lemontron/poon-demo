@@ -1,7 +1,6 @@
-import React from 'react';
 import { navigation } from 'poon-router';
-import { List, Window } from 'poon-ui';
-import FileItem from './FileItem.jsx';
+import { List, Window, TextInput, Placeholder } from 'poon-ui';
+import FileItem from './FileItem';
 
 const FilesSearch = ({screen, isVisible}) => {
 	const search = screen.useQueryParam('search', '');
@@ -11,17 +10,22 @@ const FilesSearch = ({screen, isVisible}) => {
 	);
 
 	const renderBody = () => {
-		if (!search) return null;
+		if (!search) return <Placeholder title="Search for something..."/>;
 		return <List items={[]} renderItem={renderItem}/>;
 	};
 
 	return (
 		<Window
 			title="Search"
-			search={search}
-			onChangeSearch={val => navigation.setQueryParams({'search': val}, {replaceState: true})}
-			children={renderBody()}
 			isVisible={isVisible}
+			SearchComponent={
+				<TextInput
+					type="search"
+					value={search}
+					onChangeText={val => navigation.setQueryParams({'search': val}, {replaceState: true})}
+				/>
+			}
+			children={renderBody()}
 		/>
 	);
 };

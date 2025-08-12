@@ -14,6 +14,7 @@
     --header-font-size:14px;
     --subtitle-color:#888;
     --separator-color:rgba(99, 99, 99, .3);
+    --separator-height:1px;
     --touchable-highlight:#222;
     --shade-color:rgba(30, 31, 34, .8);
     --window-radius:8px;
@@ -22,9 +23,8 @@
     --alert-title-font-size:14px;
 }
 
-.pitch {flex:1; height:100%; display:flex; flex-direction:column;}
+/* PITCH */
 .pitch img {height:24px;}
-.pitch .scroller {padding:0 20px;}
 .pitch-page {display:flex; height:100%; justify-content:center; align-items:center; flex-direction:column; padding:20px;}
 .pitch-page-0 {background:#001 url(/assets/pitch0.svg) center center no-repeat; background-size:1000px;}
 .pitch-page-1 {background:#101 url(/assets/pitch1.svg) center center no-repeat;}
@@ -39,22 +39,10 @@
 }
 
 /* DEMOS HOME */
-.demos-card {background:#000 !important;}
-.demos {background:#000 url(/assets/rose.svg) bottom right no-repeat; height:100%; position:relative; padding:10px 0; will-change:transform;}
-
-/* FILE BROWSER DEMO */
-.files {background:#000 !important;}
-.files .header {background:transparent !important;}
+.demos {background:#000 url(/assets/rose.svg) bottom right no-repeat;}
 
 /* MAP DEMO */
-.map {background:#000 !important;}
-.mapbox {height:100%;}
 .mapboxgl-control-container {display:none;}
-.avatar {height:24px; width:24px; border-radius:12px;}
-.map-container {position:relative; flex:1;}
-.map-controls-scroller {position:absolute; top:0; left:0; right:0; z-index:1;}
-.pills {display:flex; align-items:center; gap:10px; padding:10px; min-width:0;}
-
 .user-location-marker {height:20px; width:20px; border-radius:10px; background-color:#fff;}
 .user-location-marker:after {content:""; display:block; border-radius:8px; margin:2px; height:16px; width:16px; background-color:#48f;}
 
@@ -64,9 +52,7 @@
 .alert-container.confetti {background:url("/assets/confetti.gif") center center no-repeat; background-size:cover;}
 
 /* CLOCK */
-.clock-card {background:#000 !important;}
-.clock-card .card-body {align-items:center; justify-content:center; padding-bottom:40px;}
-.clock-time {font-size:30vw; display:flex; gap:5vw; align-items:center;}
+.clock-time {font-size:30vw;}
 .clock-ampm {font-size:10vw;}
 
 /* SHADE DEMOS */
@@ -75,4 +61,3 @@
 /* GALLERY DEMO */
 .gallery-grid {display:grid; grid-template-columns:repeat(3, 1fr); gap:3px;}
 .gallery-grid .touchable {aspect-ratio:1; background-size:cover; background-position:center;}
-.gallery-title {display:inline-flex; gap:10px; align-items:center;}

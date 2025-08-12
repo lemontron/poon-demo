@@ -1,6 +1,5 @@
-import React from 'react';
 import { Reveal, Placeholder, ViewPager, ScrollView } from 'poon-ui';
-import LongList from '../components/LongList.jsx';
+import DemoLongList from '../components/DemoLongList';
 
 const TabDemo = ({isVisible, animateIn}) => (
 	<Reveal
@@ -8,9 +7,9 @@ const TabDemo = ({isVisible, animateIn}) => (
 		isVisible={isVisible}
 		animateIn={animateIn}
 	>
-		<ViewPager titles={['ScrollView', 'Placeholder', 'Placeholder']}>
+		<ViewPager titles={['ScrollView', 'Placeholder', 'Placeholder']} frame>
 			<ScrollView>
-				<LongList/>
+				<DemoLongList/>
 			</ScrollView>
 			<Placeholder title="Sexy Ipsum"/>
 			<Placeholder title="Sexy Ipsum2"/>

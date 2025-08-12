@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { prettyBytes } from '../../util/format';
 import { TouchableRow, Icon, showActionSheet } from 'poon-ui';
 import { createPath } from '../../util/fs';

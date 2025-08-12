@@ -1,16 +1,17 @@
-import React from 'react';
-import { DashboardIcon, Reveal } from 'poon-ui';
+import { SpringBoard, SpringBoardIcon, Reveal, ViewPager } from 'poon-ui';
 
-const ShadeDemos = ({screen, isVisible, animateIn}) => (
+const ShadeDemos = ({isVisible, animateIn}) => (
 	<Reveal
 		title="Shade Demo"
 		isVisible={isVisible}
 		animateIn={animateIn}
 	>
-		<div className="springboard">
-			<DashboardIcon title="Fluid" href="/shades/fluid" icon="water"/>
-			<DashboardIcon title="Rainbow" href="/shades/rainbow" icon="looks"/>
-		</div>
+		<ViewPager>
+			<SpringBoard>
+				<SpringBoardIcon title="Fluid" href="/shades/fluid" icon="water"/>
+				<SpringBoardIcon title="Rainbow" href="/shades/rainbow" icon="looks"/>
+			</SpringBoard>
+		</ViewPager>
 	</Reveal>
 );
 

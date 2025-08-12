@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from 'react';
-import { Reveal } from 'poon-ui';
+import { useEffect, useState } from 'react';
+import { Reveal, HStack } from 'poon-ui';
 
 const useTime = () => {
 	const [time, setTime] = useState(new Date());
@@ -26,13 +26,12 @@ const ClockDemo = ({isVisible, animateIn}) => {
 		<Reveal
 			isVisible={isVisible}
 			animateIn={animateIn}
-			className="clock-card"
-			HeaderComponent={null}
 		>
-			<div className="clock-time">
-				<span>{hr}</span>
+			<HStack justify="center" align="center" frame>
+				<span className="clock-time">{hr}</span>
+				&nbsp;
 				<span className="clock-ampm">{ampm}</span>
-			</div>
+			</HStack>
 		</Reveal>
 	);
 };

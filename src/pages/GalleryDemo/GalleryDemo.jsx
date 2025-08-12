@@ -1,4 +1,3 @@
-import React from 'react';
 import { Window, GalleryItem, ViewPager } from 'poon-ui';
 import files from './photos.json';
 

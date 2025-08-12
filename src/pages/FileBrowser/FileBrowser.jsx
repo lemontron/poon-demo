@@ -1,4 +1,3 @@
-import React, { Fragment } from 'react';
 import {
 	BreadCrumbs,
 	Card,
@@ -8,13 +7,16 @@ import {
 	HeaderButton,
 	List,
 	Placeholder,
-	Reveal, ScrollView,
+	Reveal,
+	ScrollView,
+	VStack,
+	ZStack,
+	FabStack,
 } from 'poon-ui';
 import { randomId } from 'poon-router';
 import images from '../GalleryDemo/photos.json';
-
-import FileItem from './FileItem.jsx';
-import { FILE, FOLDER } from '../../util/constants.js';
+import FileItem from './FileItem';
+import { FILE, FOLDER } from '../../util/constants';
 
 const transformImage = (file) => ({
 	_id: randomId(),
@@ -82,39 +84,37 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 
 	// console.log(path, files);
 
-	const renderFab = () => {
-		return (
-			<div className="fab-container">
-				<Dropdown
-					button={<Fab icon="add" title="Add"/>}
-					position="bottom-right"
-					content={
-						<DropdownItem icon="create_new_folder" title="Create Folder"/>
-					}
-				/>
-			</div>
-		);
-	};
-
 	const renderBody = () => {
 		// if (path !== '/' && !folder) return (
 		// 	<Placeholder icon="info" title="Folder does not exist"/>
 		// );
 
 		return (
-			<Fragment>
-				<BreadCrumbs path={path}/>
-				<ScrollView>
-					<List
-						ListEmptyComponent={<Placeholder message="Empty Folder"/>}
-						items={files}
-						renderItem={doc => (
-							<FileItem key={doc._id} file={doc}/>
-						)}
+			<ZStack>
+				<VStack padding={false} spacing={false}>
+					{path === '/' ? null : (
+						<BreadCrumbs path={path}/>
+					)}
+					<ScrollView>
+						<List
+							ListEmptyComponent={<Placeholder message="Empty Folder"/>}
+							items={files}
+							renderItem={doc => (
+								<FileItem key={doc._id} file={doc}/>
+							)}
+						/>
+					</ScrollView>
+				</VStack>
+				<FabStack>
+					<Dropdown
+						button={<Fab icon="add" title="Add"/>}
+						position="bottom-right"
+						content={
+							<DropdownItem icon="create_new_folder" title="Create Folder"/>
+						}
 					/>
-				</ScrollView>
-				{renderFab()}
-			</Fragment>
+				</FabStack>
+			</ZStack>
 		);
 	};
 
@@ -137,8 +137,6 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 			animateIn={animateIn}
 			headerRight={<HeaderButton icon="search" href="/files/search"/>}
 			children={renderBody()}
-			hasScrollView={false}
-			className="files"
 		/>
 	);
 };

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Reveal, ScrollView, Touchable } from 'poon-ui';
 import files from './photos.json';
 
@@ -14,9 +13,7 @@ const PhotosDemo = ({isVisible, animateIn}) => {
 	return (
 		<Reveal
 			title={
-				<div className="gallery-title">
-					<img src="/public/logo.svg" height={24}/>
-				</div>
+				<img src="/public/logo.svg" height={24}/>
 			}
 			isVisible={isVisible}
 			animateIn={animateIn}

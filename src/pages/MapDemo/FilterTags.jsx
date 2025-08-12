@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Window, TouchableRow, List, CheckBox, Tag, ScrollView, useFilterState } from 'poon-ui';
+import { useState } from 'react';
+import { Window, TouchableRow, List, CheckBox, Tag, ScrollView, TextInput, useFilterState } from 'poon-ui';
 
 const filterTags = (tags, search) => {
 	search = search.toLowerCase();
@@ -28,10 +28,11 @@ const FilterTags = ({isVisible, animateIn}) => {
 	return (
 		<Window
 			title="Tags"
-			search={search}
-			onChangeSearch={setSearch}
 			isVisible={isVisible}
 			animateIn={animateIn}
+			SearchComponent={
+				<TextInput type="search" value={search} onChangeText={setSearch}/>
+			}
 		>
 			<ScrollView>
 				<List

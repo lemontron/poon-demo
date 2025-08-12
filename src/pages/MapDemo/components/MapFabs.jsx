@@ -1,7 +1,7 @@
-import React, { useEffect, useRef } from 'react';
-import { Fab } from 'poon-ui';
+import { useEffect, useRef } from 'react';
+import { Fab, FabStack, toast } from 'poon-ui';
 
-const FloatingButtons = ({followUser, clickFollowUser, countPlaces, loading, showAsList, pan}) => {
+const MapFabs = ({followUser, clickFollowUser, countPlaces, loading, pan}) => {
 	const el = useRef();
 	useEffect(() => {
 		return pan.on(value => {
@@ -11,7 +11,7 @@ const FloatingButtons = ({followUser, clickFollowUser, countPlaces, loading, sho
 	}, []);
 
 	return (
-		<div className="fab-container" ref={el}>
+		<FabStack>
 			<Fab
 				icon="near_me"
 				active={!followUser}
@@ -23,10 +23,10 @@ const FloatingButtons = ({followUser, clickFollowUser, countPlaces, loading, sho
 				title={`Show 10 as list`}
 				loading={loading}
 				disabled={countPlaces === 0}
-				onPress={showAsList}
+				onPress={() => toast('Sup')}
 			/>
-		</div>
+		</FabStack>
 	);
 };
 
-export default FloatingButtons
+export default MapFabs;
