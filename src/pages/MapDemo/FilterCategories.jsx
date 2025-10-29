@@ -36,7 +36,7 @@ const FilterCategories = ({isVisible, animateIn}) => {
 					keyExtractor={r => r.name}
 					renderItem={item => (
 						<TouchableRow
-							leftIcon={<Emoji emoji={item.emoji}/>}
+							icon={<Emoji emoji={item.emoji}/>}
 							title={item.name}
 							onClick={() => toggleKey(item.name)}
 							RightComponent={

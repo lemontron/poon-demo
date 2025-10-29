@@ -10,7 +10,7 @@ const DemoLongList = () => (
 			<TouchableRow
 				title={item}
 				caret
-				leftIcon="cloud"
+				icon="cloud"
 				onClick={() => toast(item)}
 			/>
 		)}

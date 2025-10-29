@@ -82,7 +82,7 @@ const MapDemo = ({isVisible, animateIn}) => {
 					accessToken="pk.eyJ1IjoiaG90c3BvdG55YyIsImEiOiJja2FjbzlldzkxYmI2MnNyeXByeTMxeGVkIn0.hR5UA6Ejo8uW8ADPnoh1bA"
 				/>
 				<VStack align="leading" passthrough>
-					<ScrollView horizontal pills pad>
+					<ScrollView horizontal pills padding>
 						<FilterButton
 							LeftComponent={
 								<img

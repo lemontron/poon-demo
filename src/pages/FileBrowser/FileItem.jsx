@@ -27,7 +27,7 @@ const FileItem = ({file}) => {
 
 	if (file.type === 'folder') return (
 		<TouchableRow
-			leftIcon={<Icon icon="folder"/>}
+			icon="folder"
 			title={file.name}
 			onPressMore={showMore}
 			href={createPath('files', file.path, file.name)}
@@ -36,7 +36,7 @@ const FileItem = ({file}) => {
 
 	return (
 		<TouchableRow
-			leftIcon={<Icon icon={file.icon}/>}
+			icon={file.icon}
 			onPressMore={showMore}
 			title={file.name}
 			meta={`${prettyBytes(file.size)}`}
