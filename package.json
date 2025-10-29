@@ -5,9 +5,7 @@
   "scripts": {
     "dev": "vite --host",
     "build": "vite build && git add dist/*",
-    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "echo": "echo hey"
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
     "@babel/preset-env": "^7.28.0",
