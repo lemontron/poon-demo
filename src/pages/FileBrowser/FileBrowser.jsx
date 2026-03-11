@@ -93,7 +93,7 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 			<ZStack>
 				<VStack padding={false} spacing={false}>
 					{path === '/' ? null : (
-						<BreadCrumbs path={path}/>
+						<BreadCrumbs root="/files" path={path}/>
 					)}
 					<ScrollView>
 						<List

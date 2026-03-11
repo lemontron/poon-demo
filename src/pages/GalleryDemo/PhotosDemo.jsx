@@ -20,7 +20,7 @@ const PhotosDemo = ({isVisible, animateIn}) => {
 			HeaderComponent={null}
 			className="gallery-demo"
 		>
-			<ScrollView>
+			<ScrollView frame>
 				<div className="gallery-grid" children={files.map(renderItem)}/>
 			</ScrollView>
 		</Reveal>
