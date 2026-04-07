@@ -18,7 +18,7 @@
     "react-dom": "^19.1.1",
     "rollup": "^4.46.2"
   },
-  "homepage": "https://jamesloper.github.io/poon-demo",
+  "homepage": "https://poon.app",
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.0",
     "eslint": "^9.32.0",
