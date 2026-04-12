@@ -22,7 +22,7 @@ const HomePage = () => {
 			</div>
 			<div className="pitch-page pitch-page-2">
 				<p>Why settle for a vanilla web app?</p>
-				<Button title="Let’s make some magic →" href="/demos" color="frosted"/>
+				<Button title="Let’s make some magic →" href="/demos" color="glass"/>
 			</div>
 		</ViewPager>
 	);
