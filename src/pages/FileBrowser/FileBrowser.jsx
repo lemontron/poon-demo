@@ -11,7 +11,6 @@ import {
 	ScrollView,
 	VStack,
 	ZStack,
-	FabStack,
 } from 'poon-ui';
 import { randomId } from 'poon-router';
 import images from '../GalleryDemo/photos.json';
@@ -105,7 +104,7 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 						/>
 					</ScrollView>
 				</VStack>
-				<FabStack>
+				<VStack className="fab-container" align="trailing" justify="trailing" passthrough>
 					<Dropdown
 						button={<Fab icon="add" title="Add"/>}
 						position="bottom-right"
@@ -113,7 +112,7 @@ const FileBrowser = ({screen, isVisible, animateIn}) => {
 							<DropdownItem icon="create_new_folder" title="Create Folder"/>
 						}
 					/>
-				</FabStack>
+				</VStack>
 			</ZStack>
 		);
 	};

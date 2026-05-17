@@ -10,8 +10,8 @@ import {
 	VStack,
 	toast,
 	useAnimatedValue,
+	useLocation,
 } from 'poon-ui';
-import { useLocation } from 'poon-permissions';
 import MapBox from 'poon-map';
 import { capitalize, pluralize } from '../../util/format';
 import { filterDates } from './filters';

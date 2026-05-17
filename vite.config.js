@@ -8,6 +8,7 @@ export default defineConfig({
 		alias: [
 			{ find: 'react', replacement: path.resolve(__dirname, 'node_modules/react') },
 			{ find: 'react-dom', replacement: path.resolve(__dirname, 'node_modules/react-dom') },
+			{ find: /^poon-markdown$/, replacement: path.resolve(__dirname, '../poon-markdown/index.js') },
 			{ find: /^poon-router$/, replacement: path.resolve(__dirname, '../poon-router/src/index.js') },
 			{ find: /^poon-ui$/, replacement: path.resolve(__dirname, '../poon-ui/dist/index.js') },
 		],
@@ -21,6 +22,6 @@ export default defineConfig({
 	},
 	optimizeDeps: {
 		include: ['react', 'react-dom'],
-		exclude: ['poon-router', 'poon-ui'],
+		exclude: ['poon-markdown', 'poon-router', 'poon-ui'],
 	},
 });

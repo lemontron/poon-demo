@@ -1,25 +1,37 @@
 :root {
     --gutter-width:16px;
     --header-height:50px;
-    --root:#100;
-    --bg:#000;
-    --link-color:#f00;
-    --header-bg:transparent;
     --font:"Inconsolata", -apple-system, BlinkMacSystemFont, sans-serif;
     --font-size:14px;
-    --input-border-radius:4px;
     --input-height:34px;
-    --input-font-size:14px;
-    --input-background:#333;
-    --header-font-size:14px;
-    --subtitle-color:#888;
-    --separator-color:rgba(99, 99, 99, .3);
     --separator-height:1px;
-    --touchable-highlight:#222;
     --shade-color:rgba(30, 31, 34, .8);
     --window-width:640px;
     --alert-width:300px;
-    --alert-title-font-size:14px;
+    --bg-primary:#000;
+    --bg-secondary:#111;
+    --primary:#fff;
+    --accent:#f00;
+    --subtle:#333;
+    --muted:#888;
+    --radius:8px;
+    --progress-bar-radius:999px;
+    --input-color:#aaa;
+    --input-text-color:#fff;
+    --error:#f33;
+
+    /* Legacy aliases kept for demo-specific styles and older component expectations. */
+    --root:var(--primary);
+    --bg:var(--bg-primary);
+    --link-color:var(--accent);
+    --header-bg:transparent;
+    --input-border-radius:calc(var(--radius) / 2);
+    --input-font-size:var(--font-size);
+    --input-background:var(--subtle);
+    --header-font-size:var(--font-size);
+    --separator-color:var(--subtle);
+    --touchable-highlight:var(--subtle);
+    --alert-title-font-size:calc(var(--font-size) + 2px);
 }
 
 #root {height:100%;}

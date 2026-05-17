@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Fab, FabStack, toast } from 'poon-ui';
+import { Fab, VStack, toast } from 'poon-ui';
 
 const MapFabs = ({followUser, clickFollowUser, countPlaces, loading, pan}) => {
 	const el = useRef();
@@ -8,10 +8,10 @@ const MapFabs = ({followUser, clickFollowUser, countPlaces, loading, pan}) => {
 			const y = Math.max(0, value - 50);
 			el.current.style.transform = `translateY(-${y}px)`;
 		});
-	}, []);
+	}, [pan]);
 
 	return (
-		<FabStack>
+		<VStack ref={el} className="fab-container" align="trailing" justify="trailing" passthrough>
 			<Fab
 				icon="near_me"
 				active={!followUser}
@@ -25,7 +25,7 @@ const MapFabs = ({followUser, clickFollowUser, countPlaces, loading, pan}) => {
 				disabled={countPlaces === 0}
 				onPress={() => toast('Sup')}
 			/>
-		</FabStack>
+		</VStack>
 	);
 };
 
