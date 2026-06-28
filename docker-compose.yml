@@ -1,0 +1,26 @@
+services:
+  poon-demo-app:
+    build:
+      context: .docker/build
+      dockerfile: ../app/Dockerfile
+    image: poon-demo:latest
+    restart: unless-stopped
+    environment:
+      BIND_IP: 0.0.0.0
+      PORT: 3000
+      ROOT_URL: ${ROOT_URL}
+      HTTP_FORWARDED_COUNT: 1
+      MONGO_URL: ${MONGO_URL}
+      MONGO_OPLOG_URL: ${MONGO_OPLOG_URL}
+      METEOR_SETTINGS: ${METEOR_SETTINGS}
+    ports:
+      - "${HOST_PORT:-3000}:3000"
+
+  poon-demo-cloudflared:
+    image: cloudflare/cloudflared:latest
+    restart: unless-stopped
+    command: tunnel --no-autoupdate --config /etc/cloudflared/config.yml run --token ${CLOUDFLARED_TUNNEL_TOKEN}
+    volumes:
+      - ./.docker/cloudflared/config.yml:/etc/cloudflared/config.yml:ro
+    depends_on:
+      - poon-demo-app

@@ -20,6 +20,7 @@ const GalleryDemo = ({screen, isVisible}) => {
 				children={files.map(renderItem)}
 				page={page}
 				gap={15}
+				frame
 			/>
 		</Window>
 	);

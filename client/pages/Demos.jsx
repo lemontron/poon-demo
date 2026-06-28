@@ -18,6 +18,7 @@ const Demos = ({isVisible, animateIn}) => (
 				<SpringBoardIcon title="Clock" icon="watch_later" href="/clock"/>
 				<SpringBoardIcon title="Shades" icon="curtains_closed" href="/shades"/>
 				<SpringBoardIcon title="Tabs" icon="tab" href="/tab"/>
+				<SpringBoardIcon title="Push" icon="notifications_active" href="/push-notifications"/>
 			</div>
 			<div className="springboard">
 				<SpringBoardIcon title="Tabs" icon="tab" href="/tab"/>

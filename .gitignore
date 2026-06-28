@@ -2,3 +2,6 @@
 .idea
 node_modules
 dist
+.docker/build
+.docker/app/env.sh
+.docker/app/settings.json

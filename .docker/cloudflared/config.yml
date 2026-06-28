@@ -1,0 +1,4 @@
+ingress:
+  - hostname: poon.app
+    service: http://poon-demo-app:3000
+  - service: http_status:404

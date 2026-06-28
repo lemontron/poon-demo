@@ -14,6 +14,7 @@ import FilterTags from './pages/MapDemo/FilterTags';
 import ClockDemo from './pages/ClockDemo';
 import GalleryDemo from './pages/GalleryDemo/GalleryDemo';
 import PhotosDemo from './pages/GalleryDemo/PhotosDemo';
+import PushNotificationsDemo from './pages/PushNotificationsDemo';
 
 defineRoute('Home', '/', HomePage);
 defineRoute('Demos', '/demos', Demos);
@@ -30,3 +31,4 @@ defineRoute('MapDemoFilterTags', '/map/tags', FilterTags);
 defineRoute('ClockDemo', '/clock', ClockDemo);
 defineRoute('PhotosDemo', '/photos', PhotosDemo);
 defineRoute('GalleryDemo', '/photos/gallery', GalleryDemo);
+defineRoute('PushNotificationsDemo', '/push-notifications', PushNotificationsDemo);
